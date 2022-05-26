@@ -11,3 +11,30 @@
 
 * http://www.rw-designer.com/cursor-set/zombie
 * http://www.rw-designer.com/
+
+### Other
+
+Zombie Panic Source
+
+https://store.steampowered.com/app/17500/Zombie_Panic_Source
+
+Maps
+
+https://archive.org/download/zpsarchive/maps
+
+If you want to download the maps in bulk use the chrome extension TabSave then paste all the links in the window.
+
+https://chrome.google.com/webstore/detail/tab-save/lkngoeaeclaebmpkgapchgjdbaekacki
+
+https://github.com/lmmx/tabsave
+
+TODO
+
+* Create server setup application
+* Win/Lin versions
+* find a way to download bulk maps
+
+
+Alt-F3 > ctrl-shift-Spacebar
+
+Select all text between two characters in Sublime Text 3
