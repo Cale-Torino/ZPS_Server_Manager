@@ -16,5 +16,19 @@ namespace ZPS_Server_Manager
         {
             InitializeComponent();
         }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //Open the about form
+            using (Form f = new AboutForm())
+            {
+                f.ShowDialog();
+            }
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
