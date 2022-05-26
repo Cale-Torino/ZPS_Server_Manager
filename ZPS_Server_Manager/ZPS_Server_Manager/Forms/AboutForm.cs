@@ -22,6 +22,7 @@ namespace ZPS_Server_Manager
         private void AboutForm_Load(object sender, EventArgs e)
         {
             PlayRepeat();
+            label2.Text = "Version: " + Application.ProductVersion;
         }
         private void PlayRepeat()
         {

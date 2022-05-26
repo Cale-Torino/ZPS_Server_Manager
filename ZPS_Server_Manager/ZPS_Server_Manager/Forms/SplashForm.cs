@@ -37,7 +37,7 @@ namespace ZPS_Server_Manager
             //zp_themesong.mp3
             //theme.wav
             mciSendString(@"close temp_alias", null, 0, IntPtr.Zero);
-            mciSendString(@"open ""Music\zp_themesong.mp3"" alias temp_alias", null, 0, IntPtr.Zero);
+            mciSendString(@"open ""Music\theme.wav"" alias temp_alias", null, 0, IntPtr.Zero);
             mciSendString("play temp_alias", null, 0, IntPtr.Zero);
         }
         public void TimeUp(object source, ElapsedEventArgs e)
