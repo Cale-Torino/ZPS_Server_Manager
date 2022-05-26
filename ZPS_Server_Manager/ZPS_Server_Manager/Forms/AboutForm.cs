@@ -28,7 +28,7 @@ namespace ZPS_Server_Manager
         {
             //https://youtu.be/P_EROD1FKUA
             mciSendString(@"close temp_alias2", null, 0, IntPtr.Zero);
-            mciSendString(@"open ""Music\zp_themesong.mp3"" alias temp_alias2", null, 0, IntPtr.Zero);
+            mciSendString(@"open ""Music\zps.mp3"" alias temp_alias2", null, 0, IntPtr.Zero);
             mciSendString("play temp_alias2 repeat", null, 0, IntPtr.Zero);
         }
 
