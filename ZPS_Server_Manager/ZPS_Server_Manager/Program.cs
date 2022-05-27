@@ -36,7 +36,7 @@ namespace ZPS_Server_Manager
             TrySetCursorsDotHandToSystemHandCursor();
             Thread t = new Thread(new ThreadStart(DoSplash));// Point to method
             t.Start();// Start splash thread
-            Thread.Sleep(6000);// 3 seconds
+            Thread.Sleep(6000);// 6 seconds
             Application.Run(new MainForm());
         }
         private static void DoSplash()

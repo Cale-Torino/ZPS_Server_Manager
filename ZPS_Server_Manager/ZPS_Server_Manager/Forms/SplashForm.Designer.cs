@@ -42,7 +42,7 @@
             this.panel.Controls.Add(this.label2);
             this.panel.Controls.Add(this.label1);
             this.panel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel.Location = new System.Drawing.Point(0, 425);
+            this.panel.Location = new System.Drawing.Point(0, 348);
             this.panel.Name = "panel";
             this.panel.Size = new System.Drawing.Size(800, 25);
             this.panel.TabIndex = 0;
@@ -75,7 +75,7 @@
             this.pictureBox.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox.Image")));
             this.pictureBox.Location = new System.Drawing.Point(0, 0);
             this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(800, 425);
+            this.pictureBox.Size = new System.Drawing.Size(800, 348);
             this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox.TabIndex = 1;
             this.pictureBox.TabStop = false;
@@ -85,7 +85,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 373);
             this.Controls.Add(this.pictureBox);
             this.Controls.Add(this.panel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
