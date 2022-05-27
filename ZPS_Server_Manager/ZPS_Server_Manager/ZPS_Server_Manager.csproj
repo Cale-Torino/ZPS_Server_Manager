@@ -52,6 +52,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BassClass.cs" />
+    <Compile Include="BassFlagsClass.cs" />
+    <Compile Include="Classes\Mp3Class.cs" />
+    <Compile Include="DeviceInitFlagsClass.cs" />
     <Compile Include="Forms\AboutForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,10 +110,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Music\theme.wav">
+    <Content Include="Libs\bass.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Music\zps.mp3">
+    <Content Include="Music\menu.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Music\theme.mp3">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="TextFile.txt" />

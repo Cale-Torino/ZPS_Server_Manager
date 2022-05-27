@@ -13,28 +13,60 @@ namespace ZPS_Server_Manager
 {
     public partial class AboutForm : Form
     {
+        //private readonly Classes.Mp3Class _mp3player;
+        private readonly int _handel;
         public AboutForm()
         {
             InitializeComponent();
-            PlayRepeat();
+            PlaySound();
+/*            _mp3player = new Classes.Mp3Class(@"Music\menu.mp3");
+            if (_mp3player != null)
+            {
+                _mp3player.Play();
+            }*/
         }
-        [DllImport("winmm.dll")]
-        public static extern uint mciSendString(string lpstrCommand, StringBuilder lpstrReturnString, int uReturnLength, IntPtr hWndCallback);
+        private void PlaySound()
+        {
+            try
+            {
+                BassClass.BASS_Init(-1, 44100, DeviceInitFlagsClass.DeviceInitFlags.Default, IntPtr.Zero);
+                int _handel = ManagedBass.Bass.CreateStream("Music\\theme.mp3", 0L, 0L, ManagedBass.BassFlags.Default);
+                BassClass.BASS_ChannelPlay(_handel, false);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return;
+            }
+        }
+        private void StopSound()
+        {
+            try
+            {
+                // free the stream 
+                ManagedBass.Bass.StreamFree(_handel);
+                // free BASS 
+                ManagedBass.Bass.Free();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return;
+            }
+
+        }
         private void AboutForm_Load(object sender, EventArgs e)
         {
             label2.Text = "Version: " + Application.ProductVersion;
         }
-        private void PlayRepeat()
-        {
-            //https://youtu.be/P_EROD1FKUA
-            //mciSendString(@"close temp_alias2", null, 0, IntPtr.Zero);
-            mciSendString(@"open ""Music\zps.mp3"" alias temp_alias2", null, 0, IntPtr.Zero);
-            mciSendString("play temp_alias2 repeat", null, 0, IntPtr.Zero);
-        }
 
         private void AboutForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            mciSendString(@"close temp_alias2", null, 0, IntPtr.Zero);
+            StopSound();
+/*            if (_mp3player != null)
+            {
+                _mp3player.Dispose();
+            }*/
         }
     }
 }
