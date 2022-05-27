@@ -18,6 +18,7 @@ namespace ZPS_Server_Manager
         public SplashForm()
         {
             InitializeComponent();
+            PlayOnce();
         }
         Timer myTimer = new Timer();
 
@@ -25,7 +26,6 @@ namespace ZPS_Server_Manager
         public static extern uint mciSendString(string lpstrCommand, StringBuilder lpstrReturnString, int uReturnLength, IntPtr hWndCallback);
         private void SplashForm_Load(object sender, EventArgs e)
         {
-            PlayOnce();
             label2.Text = "Version: " + Application.ProductVersion;//Get version from AssemblyInfo.cs [assembly: AssemblyFileVersion("1.0.1")]
 
             myTimer.Elapsed += new ElapsedEventHandler(TimeUp);
@@ -34,9 +34,9 @@ namespace ZPS_Server_Manager
         }
         private void PlayOnce()
         {
-            //zp_themesong.mp3
+            //zps.mp3
             //theme.wav
-            mciSendString(@"close temp_alias", null, 0, IntPtr.Zero);
+            //mciSendString(@"close temp_alias", null, 0, IntPtr.Zero);
             mciSendString(@"open ""Music\theme.wav"" alias temp_alias", null, 0, IntPtr.Zero);
             mciSendString("play temp_alias", null, 0, IntPtr.Zero);
         }
