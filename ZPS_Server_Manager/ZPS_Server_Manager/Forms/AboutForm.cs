@@ -30,8 +30,8 @@ namespace ZPS_Server_Manager
             try
             {
                 BassClass.BASS_Init(-1, 44100, DeviceInitFlagsClass.DeviceInitFlags.Default, IntPtr.Zero);
-                int _handel = ManagedBass.Bass.CreateStream("Music\\theme.mp3", 0L, 0L, ManagedBass.BassFlags.Default);
-                BassClass.BASS_ChannelPlay(_handel, false);
+                int _handel = BassClass.BASS_StreamCreateFile(false,"Music\\menu.mp3", 0L, 0L, BassFlagsClass.BassFlags.Loop);
+                BassClass.BASS_ChannelPlay(_handel, true);
             }
             catch (Exception ex)
             {
@@ -44,9 +44,9 @@ namespace ZPS_Server_Manager
             try
             {
                 // free the stream 
-                ManagedBass.Bass.StreamFree(_handel);
+                BassClass.BASS_StreamFree(_handel);
                 // free BASS 
-                ManagedBass.Bass.Free();
+                BassClass.BASS_Free();
             }
             catch (Exception ex)
             {

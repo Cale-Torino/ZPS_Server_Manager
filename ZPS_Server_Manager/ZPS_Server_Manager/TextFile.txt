@@ -11,6 +11,7 @@ https://www.vbforums.com/showthread.php?276466-mci-error-codes
 
 https://github.com/ManagedBass/ManagedBass/
 
+http://bass.radio42.com/help/html/fdf43f28-d1cd-2951-c126-3ce35edaa7f5.htm
 
 BASS_GetEAXParameters
 BASS_SetEAXParameters

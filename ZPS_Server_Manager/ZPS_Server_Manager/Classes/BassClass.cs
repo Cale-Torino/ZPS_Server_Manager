@@ -10,8 +10,8 @@ namespace ZPS_Server_Manager
     public class BassClass : IDisposable
     {
 
-        private const string BASSMOD_lib = "bass.dll";
-        [DllImport(BASSMOD_lib, CallingConvention = CallingConvention.StdCall)]
+        private const string BASS_lib = "Libs\\bass.dll";
+        [DllImport(BASS_lib, CallingConvention = CallingConvention.StdCall)]
         //
         // Summary:
         //     Initializes an output device.
@@ -117,7 +117,7 @@ namespace ZPS_Server_Manager
         //     On Linux and Windows CE, the length of the device's buffer can be set via the
         //     ManagedBass.Bass.PlaybackBufferLength config option.
         public static extern bool BASS_Init(int Device = -1, int Frequency = 44100, DeviceInitFlagsClass.DeviceInitFlags Flags = DeviceInitFlagsClass.DeviceInitFlags.Default, IntPtr Win = default(IntPtr), IntPtr ClsID = default(IntPtr));
-        [DllImport(BASSMOD_lib, CallingConvention = CallingConvention.StdCall)]
+        [DllImport(BASS_lib, CallingConvention = CallingConvention.StdCall)]
         //
         // Summary:
         //     Creates a sample stream from an MP3, MP2, MP1, OGG, WAV, AIFF or plugin supported
@@ -224,7 +224,7 @@ namespace ZPS_Server_Manager
         //     Media Foundation and CoreAudio codecs are only tried after the built-in decoders
         //     and any plugins have rejected the file.
         public static extern int BASS_StreamCreateFile(bool mem, string File, long Offset, long Length, BassFlagsClass.BassFlags Flags = BassFlagsClass.BassFlags.Unicode);
-        [DllImport(BASSMOD_lib, CallingConvention = CallingConvention.StdCall)]
+        [DllImport(BASS_lib, CallingConvention = CallingConvention.StdCall)]
         //
         // Summary:
         //     Starts (or resumes) playback of a sample, stream, MOD music, or recording.
@@ -267,7 +267,7 @@ namespace ZPS_Server_Manager
         //     parameter is also of no consequence with recording channels.
         public static extern bool BASS_ChannelPlay(int Handle, bool Restart = false);
 
-        [DllImport(BASSMOD_lib, CallingConvention = CallingConvention.StdCall)]
+        [DllImport(BASS_lib, CallingConvention = CallingConvention.StdCall)]
 
         //
         // Summary:
@@ -285,7 +285,7 @@ namespace ZPS_Server_Manager
         //   F:ManagedBass.Errors.Init:
         //     Handle is not valid.
         public static extern bool BASS_StreamFree(int Handle);
-        [DllImport(BASSMOD_lib, CallingConvention = CallingConvention.StdCall)]
+        [DllImport(BASS_lib, CallingConvention = CallingConvention.StdCall)]
         //
         // Summary:
         //     Frees all resources used by the output device, including all it's samples, streams,

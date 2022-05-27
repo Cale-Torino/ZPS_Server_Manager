@@ -34,7 +34,7 @@ namespace ZPS_Server_Manager
             try
             {
                 BassClass.BASS_Init(-1, 44100, DeviceInitFlagsClass.DeviceInitFlags.Default, IntPtr.Zero);
-              int _handel = ManagedBass.Bass.CreateStream("Music\\theme.mp3", 0L, 0L,ManagedBass.BassFlags.Default);
+                int _handel = BassClass.BASS_StreamCreateFile(false, "Music\\theme.mp3", 0L, 0L, BassFlagsClass.BassFlags.Default);
                 BassClass.BASS_ChannelPlay(_handel, false);
             }
             catch (Exception ex)
