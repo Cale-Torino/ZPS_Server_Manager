@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -62,13 +63,30 @@ namespace ZPS_Server_Manager
         }
         private void SplashForm_Load(object sender, EventArgs e)
         {
+            CreateFolder();
             label2.Text = "Version: " + Application.ProductVersion;//Get version from AssemblyInfo.cs [assembly: AssemblyFileVersion("1.0.1")]
 
             myTimer.Elapsed += new ElapsedEventHandler(TimeUp);
             myTimer.Interval = 6000;
             myTimer.Start();//start timer
         }
-
+        private void CreateFolder()
+        {
+            try
+            {
+                //Create the folders used by the app
+                string path = Application.StartupPath;
+                Directory.CreateDirectory(path + @"\Logs");
+                LoggerClass.WriteLine(" *** Application Start [SplashForm] ***");
+                LoggerClass.WriteLine(" *** CreateDirectory Success [SplashForm] ***");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Create Folder Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                LoggerClass.WriteLine(" *** Error:" + ex.Message + " [SplashForm] ***");
+                return;
+            }
+        }
         public void TimeUp(object source, ElapsedEventArgs e)
         {
             Invoke((MethodInvoker)delegate
