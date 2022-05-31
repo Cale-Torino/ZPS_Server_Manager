@@ -39,12 +39,13 @@
             // 
             // panel
             // 
+            this.panel.BackColor = System.Drawing.Color.Black;
             this.panel.Controls.Add(this.label2);
             this.panel.Controls.Add(this.label1);
             this.panel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel.Location = new System.Drawing.Point(0, 348);
+            this.panel.Location = new System.Drawing.Point(0, 423);
             this.panel.Name = "panel";
-            this.panel.Size = new System.Drawing.Size(800, 25);
+            this.panel.Size = new System.Drawing.Size(427, 25);
             this.panel.TabIndex = 0;
             // 
             // label2
@@ -52,7 +53,7 @@
             this.label2.AutoSize = true;
             this.label2.Dock = System.Windows.Forms.DockStyle.Right;
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(733, 0);
+            this.label2.Location = new System.Drawing.Point(360, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(67, 20);
             this.label2.TabIndex = 1;
@@ -75,7 +76,7 @@
             this.pictureBox.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox.Image")));
             this.pictureBox.Location = new System.Drawing.Point(0, 0);
             this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(800, 348);
+            this.pictureBox.Size = new System.Drawing.Size(427, 423);
             this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox.TabIndex = 1;
             this.pictureBox.TabStop = false;
@@ -85,7 +86,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(800, 373);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(427, 448);
             this.Controls.Add(this.pictureBox);
             this.Controls.Add(this.panel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
