@@ -16,7 +16,7 @@ namespace ZPS_Server_Manager
         /// </summary>
         [STAThread]
 
-        private static void TrySetCursorsDotHandToSystemHandCursor()
+/*        private static void TrySetCursorsDotHandToSystemHandCursor()
         {
             try
             {
@@ -24,16 +24,16 @@ namespace ZPS_Server_Manager
                                .SetValue(null, SystemHandCursor);
             }
             catch { }
-        }
-        [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = true)]
-        private static extern IntPtr LoadCursor(IntPtr hInstance, int lpCursorName);
+        }*/
+        //[DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = true)]
+        //private static extern IntPtr LoadCursor(IntPtr hInstance, int lpCursorName);
 
-        private static readonly Cursor SystemHandCursor = new Cursor(LoadCursor(IntPtr.Zero, 32649 /*IDC_HAND*/));
+        //private static readonly Cursor SystemHandCursor = new Cursor(LoadCursor(IntPtr.Zero, 32649 /*IDC_HAND*/));
         static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            TrySetCursorsDotHandToSystemHandCursor();
+            //TrySetCursorsDotHandToSystemHandCursor();
             Thread t = new Thread(new ThreadStart(DoSplash));// Point to method
             t.Start();// Start splash thread
             Thread.Sleep(6000);// 6 seconds

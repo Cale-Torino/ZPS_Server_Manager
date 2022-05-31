@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AboutForm));
             this.panel = new System.Windows.Forms.Panel();
-            this.linkLabel = new System.Windows.Forms.LinkLabel();
+            this.label1 = new System.Windows.Forms.Label();
             this.label = new System.Windows.Forms.Label();
             this.pictureBox = new System.Windows.Forms.PictureBox();
             this.panel.SuspendLayout();
@@ -39,7 +39,7 @@
             // 
             // panel
             // 
-            this.panel.Controls.Add(this.linkLabel);
+            this.panel.Controls.Add(this.label1);
             this.panel.Controls.Add(this.label);
             this.panel.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel.Location = new System.Drawing.Point(0, 249);
@@ -48,20 +48,20 @@
             this.panel.Size = new System.Drawing.Size(474, 16);
             this.panel.TabIndex = 1;
             // 
-            // linkLabel
+            // label1
             // 
-            this.linkLabel.AutoSize = true;
-            this.linkLabel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.linkLabel.LinkColor = System.Drawing.Color.RoyalBlue;
-            this.linkLabel.Location = new System.Drawing.Point(0, 0);
-            this.linkLabel.Name = "linkLabel";
-            this.linkLabel.Size = new System.Drawing.Size(94, 13);
-            this.linkLabel.TabIndex = 2;
-            this.linkLabel.TabStop = true;
-            this.linkLabel.Text = "C.A Torino, Github";
-            this.linkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel_LinkClicked);
-            this.linkLabel.Enter += new System.EventHandler(this.linkLabel_Enter);
-            this.linkLabel.Leave += new System.EventHandler(this.linkLabel_Leave);
+            this.label1.AutoSize = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(94, 13);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "C.A Torino, Github";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.label1.MouseEnter += new System.EventHandler(this.label1_MouseEnter);
+            this.label1.MouseLeave += new System.EventHandler(this.label1_MouseLeave);
             // 
             // label
             // 
@@ -120,6 +120,6 @@
         private System.Windows.Forms.Panel panel;
         private System.Windows.Forms.Label label;
         private System.Windows.Forms.PictureBox pictureBox;
-        private System.Windows.Forms.LinkLabel linkLabel;
+        private System.Windows.Forms.Label label1;
     }
 }
