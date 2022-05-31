@@ -1,0 +1,36 @@
+﻿[UpArrow]
+Path=Alternate.cur
+
+[NWPen]
+Path=Handwriring man.cur
+
+[IBeam]
+Path=Monster text.cur
+
+[Arrow]
+Path=normal Coffin.cur
+
+[Help]
+Path=Select Help.cur
+
+[No]
+Path=unavilable hat.cur
+
+[Hand]
+Path=Zombie Hand link select.cur
+
+[SizeNESW]
+Path=Zombie resize Diagonal 2.ani
+
+[SizeNWSE]
+Path=Zombie resize Diagonal 1.ani
+
+[SizeWE]
+Path=Zombie resize Horizontal.ani
+
+[SizeNS]
+Path=Zombie resize up.ani
+
+[SizeAll]
+Path=Move over.ani
+

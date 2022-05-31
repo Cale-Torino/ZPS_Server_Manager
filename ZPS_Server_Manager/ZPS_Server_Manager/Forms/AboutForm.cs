@@ -57,7 +57,9 @@ namespace ZPS_Server_Manager
         }
         private void AboutForm_Load(object sender, EventArgs e)
         {
-            label2.Text = "Version: " + Application.ProductVersion;
+            IntPtr handle = CustomCursorClass.LoadCursorFromFile("Normal.cur");
+            Cursor = new Cursor(handle);
+            label.Text = "Version: " + Application.ProductVersion;
         }
 
         private void AboutForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -67,6 +69,24 @@ namespace ZPS_Server_Manager
             {
                 _mp3player.Dispose();
             }*/
+        }
+
+        private void linkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            //Opens link to https://github.com/Cale-Torino
+            System.Diagnostics.Process.Start("https://github.com/Cale-Torino");
+        }
+
+        private void linkLabel_Enter(object sender, EventArgs e)
+        {
+            IntPtr handle = CustomCursorClass.LoadCursorFromFile("Hl.cur");
+            Cursor = new Cursor(handle);
+        }
+
+        private void linkLabel_Leave(object sender, EventArgs e)
+        {
+            IntPtr handle = CustomCursorClass.LoadCursorFromFile("Hn.cur");
+            Cursor = new Cursor(handle);
         }
     }
 }

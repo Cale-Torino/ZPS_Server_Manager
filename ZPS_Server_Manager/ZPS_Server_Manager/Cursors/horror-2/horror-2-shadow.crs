@@ -1,0 +1,9 @@
+﻿[Crosshair]
+Path=bloody precision.cur
+
+[Wait]
+Path=busy Skull.ani
+
+[AppStarting]
+Path=Skull.cur
+

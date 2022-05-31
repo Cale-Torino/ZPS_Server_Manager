@@ -1,0 +1,39 @@
+﻿[Arrow]
+Path=Bloody Cursor.cur
+
+[Help]
+Path=Bloody Cursor (Help).cur
+
+[AppStarting]
+Path=Bloody Cursor (Working).cur
+
+[Wait]
+Path=Bloody Cursor (Busy).cur
+
+[Crosshair]
+Path=Bloody Cursor (Precision).cur
+
+[IBeam]
+Path=Bloody Cursor (Text).cur
+
+[NWPen]
+Path=Bloody Cursor (Handwriting).cur
+
+[No]
+Path=Bloody Cursor (Unavailable).cur
+
+[SizeNS]
+Path=Bloody Cursor (V Resize).cur
+
+[SizeWE]
+Path=Bloody Cursor (H Resize).cur
+
+[SizeAll]
+Path=Bloody Cursor (Move).cur
+
+[UpArrow]
+Path=Bloody Cursor (Alternate).cur
+
+[Hand]
+Path=Bloody Cursor (Link).cur
+
