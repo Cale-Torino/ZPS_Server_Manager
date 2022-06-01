@@ -42,10 +42,9 @@
             this.panel.Controls.Add(this.label1);
             this.panel.Controls.Add(this.label);
             this.panel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel.Location = new System.Drawing.Point(0, 249);
-            this.panel.Margin = new System.Windows.Forms.Padding(2);
+            this.panel.Location = new System.Drawing.Point(0, 383);
             this.panel.Name = "panel";
-            this.panel.Size = new System.Drawing.Size(474, 16);
+            this.panel.Size = new System.Drawing.Size(711, 25);
             this.panel.TabIndex = 1;
             // 
             // label1
@@ -55,8 +54,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.RoyalBlue;
             this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(94, 13);
+            this.label1.Size = new System.Drawing.Size(146, 20);
             this.label1.TabIndex = 3;
             this.label1.Text = "C.A Torino, Github";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -68,10 +68,9 @@
             this.label.AutoSize = true;
             this.label.Dock = System.Windows.Forms.DockStyle.Right;
             this.label.ForeColor = System.Drawing.Color.White;
-            this.label.Location = new System.Drawing.Point(429, 0);
-            this.label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label.Location = new System.Drawing.Point(644, 0);
             this.label.Name = "label";
-            this.label.Size = new System.Drawing.Size(45, 13);
+            this.label.Size = new System.Drawing.Size(67, 20);
             this.label.TabIndex = 1;
             this.label.Text = "Version:";
             // 
@@ -81,26 +80,24 @@
             this.pictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox.Image")));
             this.pictureBox.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(474, 249);
+            this.pictureBox.Size = new System.Drawing.Size(711, 383);
             this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox.TabIndex = 2;
             this.pictureBox.TabStop = false;
             // 
             // AboutForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(474, 265);
+            this.ClientSize = new System.Drawing.Size(711, 408);
             this.Controls.Add(this.pictureBox);
             this.Controls.Add(this.panel);
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AboutForm";

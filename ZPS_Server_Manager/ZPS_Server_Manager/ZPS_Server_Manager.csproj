@@ -56,7 +56,7 @@
     <Compile Include="Classes\BassFlagsClass.cs" />
     <Compile Include="Classes\Mp3Class.cs" />
     <Compile Include="Classes\DeviceInitFlagsClass.cs" />
-    <Compile Include="CustomCursorClass.cs" />
+    <Compile Include="Classes\CustomCursorClass.cs" />
     <Compile Include="Forms\AboutForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,6 +97,9 @@
       <DependentUpon>SplashForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.manifest" />
+    <None Include="Cursor\Wo.ani">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -111,6 +114,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Cursor\Hl.cur">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Cursor\Hn.cur">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Cursor\Sk.cur" />
     <Content Include="Libs\bass.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

@@ -29,7 +29,7 @@ namespace ZPS_Server_Manager
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            IntPtr handle = CustomCursorClass.LoadCursorFromFile("Hn.cur");
+            IntPtr handle = CustomCursorClass.LoadCursorFromFile("Cursor\\Hn.cur");
             Cursor = new Cursor(handle);
         }
     }

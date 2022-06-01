@@ -57,7 +57,8 @@ namespace ZPS_Server_Manager
         }
         private void AboutForm_Load(object sender, EventArgs e)
         {
-            IntPtr handle = CustomCursorClass.LoadCursorFromFile("Hn.cur");
+            pictureBox.Cursor = new Cursor(CustomCursorClass.LoadCursorFromFile("Cursor\\Wo.ani"));
+            IntPtr handle = CustomCursorClass.LoadCursorFromFile("Cursor\\Hn.cur");
             Cursor = new Cursor(handle);
             label.Text = "Version: " + Application.ProductVersion;
         }
@@ -84,13 +85,13 @@ namespace ZPS_Server_Manager
 
         private void label1_MouseEnter(object sender, EventArgs e)
         {
-            IntPtr handle = CustomCursorClass.LoadCursorFromFile("Hl.cur");
+            IntPtr handle = CustomCursorClass.LoadCursorFromFile("Cursor\\Hl.cur");
             Cursor = new Cursor(handle);
         }
 
         private void label1_MouseLeave(object sender, EventArgs e)
         {
-            IntPtr handle = CustomCursorClass.LoadCursorFromFile("Hn.cur");
+            IntPtr handle = CustomCursorClass.LoadCursorFromFile("Cursor\\Hn.cur");
             Cursor = new Cursor(handle);
         }
     }

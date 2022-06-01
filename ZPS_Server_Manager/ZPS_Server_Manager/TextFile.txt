@@ -118,3 +118,14 @@ BASS_StreamPutData
 BASS_StreamPutFileData
 BASS_Update
 _
+
+TODO:
+
+create custom controls 
+remove old windows boarders
+create zombie red outline
+
+Adde logic before and release version 1.0
+
+before custom theme added
+
