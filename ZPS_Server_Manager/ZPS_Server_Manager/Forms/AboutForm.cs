@@ -13,17 +13,11 @@ namespace ZPS_Server_Manager
 {
     public partial class AboutForm : Form
     {
-        //private readonly Classes.Mp3Class _mp3player;
         private int _handel;
         public AboutForm()
         {
             InitializeComponent();
             PlaySound();
-/*            _mp3player = new Classes.Mp3Class(@"Music\menu.mp3");
-            if (_mp3player != null)
-            {
-                _mp3player.Play();
-            }*/
         }
         private void PlaySound()
         {
@@ -66,10 +60,6 @@ namespace ZPS_Server_Manager
         private void AboutForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             StopSound();
-/*            if (_mp3player != null)
-            {
-                _mp3player.Dispose();
-            }*/
         }
 
         private void linkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

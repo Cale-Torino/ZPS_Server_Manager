@@ -133,8 +133,12 @@
     <Content Include="Music\theme.mp3">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="TextFiles\Readme.txt" />
-    <Content Include="TextFiles\SteamCMD_Steps.txt" />
+    <Content Include="TextFiles\Readme.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TextFiles\SteamCMD_Steps.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="TextFile.txt" />
     <Content Include="zps_101.ico" />
   </ItemGroup>

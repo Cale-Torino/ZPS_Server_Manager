@@ -13,6 +13,8 @@ https://github.com/ManagedBass/ManagedBass/
 
 http://bass.radio42.com/help/html/fdf43f28-d1cd-2951-c126-3ce35edaa7f5.htm
 
+https://store.steampowered.com/app/17500/Zombie_Panic_Source
+
 BASS_GetEAXParameters
 BASS_SetEAXParameters
 BASS_Apply3D

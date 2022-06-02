@@ -35,13 +35,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.GetSteamCMDbutton = new System.Windows.Forms.Button();
             this.SteamDirbutton = new System.Windows.Forms.Button();
+            this.OpenPortForwardbutton = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(7)))), ((int)(((byte)(7)))));
-            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aboutToolStripMenuItem});
@@ -86,7 +86,7 @@
             this.GetSteamCMDbutton.ForeColor = System.Drawing.Color.White;
             this.GetSteamCMDbutton.Location = new System.Drawing.Point(12, 209);
             this.GetSteamCMDbutton.Name = "GetSteamCMDbutton";
-            this.GetSteamCMDbutton.Size = new System.Drawing.Size(142, 40);
+            this.GetSteamCMDbutton.Size = new System.Drawing.Size(153, 40);
             this.GetSteamCMDbutton.TabIndex = 4;
             this.GetSteamCMDbutton.Text = "Get SteamCMD";
             this.GetSteamCMDbutton.UseVisualStyleBackColor = true;
@@ -105,12 +105,26 @@
             this.SteamDirbutton.UseVisualStyleBackColor = true;
             this.SteamDirbutton.Click += new System.EventHandler(this.SteamDirbutton_Click);
             // 
+            // OpenPortForwardbutton
+            // 
+            this.OpenPortForwardbutton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(7)))), ((int)(((byte)(7)))));
+            this.OpenPortForwardbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.OpenPortForwardbutton.ForeColor = System.Drawing.Color.White;
+            this.OpenPortForwardbutton.Location = new System.Drawing.Point(12, 255);
+            this.OpenPortForwardbutton.Name = "OpenPortForwardbutton";
+            this.OpenPortForwardbutton.Size = new System.Drawing.Size(153, 40);
+            this.OpenPortForwardbutton.TabIndex = 6;
+            this.OpenPortForwardbutton.Text = "Open Port Forward";
+            this.OpenPortForwardbutton.UseVisualStyleBackColor = true;
+            this.OpenPortForwardbutton.Click += new System.EventHandler(this.OpenPortForwardbutton_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Black;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.OpenPortForwardbutton);
             this.Controls.Add(this.SteamDirbutton);
             this.Controls.Add(this.GetSteamCMDbutton);
             this.Controls.Add(this.label1);
@@ -139,6 +153,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button GetSteamCMDbutton;
         private System.Windows.Forms.Button SteamDirbutton;
+        private System.Windows.Forms.Button OpenPortForwardbutton;
     }
 }
 

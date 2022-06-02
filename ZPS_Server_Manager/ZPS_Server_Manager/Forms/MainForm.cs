@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO.Compression;
 using System.Linq;
@@ -33,6 +34,16 @@ namespace ZPS_Server_Manager
         {
             IntPtr handle = CustomCursorClass.LoadCursorFromFile("Cursor\\Hn.cur");
             Cursor = new Cursor(handle);
+            //Load all the saved properties from the config file on app startup
+            if (!string.IsNullOrWhiteSpace(Properties.Settings.Default.SteamCMDPath))
+            {
+                GetSteamCMDbutton.Enabled = true;
+                SteamDirbutton.Text = Properties.Settings.Default.SteamCMDPath;//Gets SteamCMDPath directory.
+            }
+            else
+            {
+                GetSteamCMDbutton.Enabled = false;
+            }
         }
 
         private void SteamDirbutton_Click(object sender, EventArgs e)
@@ -60,11 +71,22 @@ namespace ZPS_Server_Manager
             //check that cmd has not been installed already
             try
             {
-                using (WebClient wc = new WebClient())
+/*                using (WebClient wc = new WebClient())
                 {
                     wc.DownloadFileCompleted += new AsyncCompletedEventHandler(Downloadcomplete);
                     wc.DownloadFileAsync(new Uri("https://steamcdn-a.akamaihd.net/client/installer/steamcmd.zip"), $@"{Properties.Settings.Default.SteamCMDPath}\steamcmd.zip");
                     
+                }*/
+                using (Process p = new Process())
+                {
+                    string f = $@"{Application.StartupPath}\TextFiles\SteamCMD_Steps.txt";
+                    p.StartInfo = new ProcessStartInfo()
+                    {
+                        UseShellExecute = true,
+                        FileName = f
+                    };
+
+                    p.Start();
                 }
             }
             catch (Exception ex)
@@ -73,6 +95,12 @@ namespace ZPS_Server_Manager
                 LoggerClass.WriteLine(" *** Error:" + ex.Message + " [MainForm] ***");
                 return;
             }
+        }
+
+        private void OpenPortForwardbutton_Click(object sender, EventArgs e)
+        {
+            //Opens link to https://www.yougetsignal.com/tools/open-ports
+            Process.Start("https://www.yougetsignal.com/tools/open-ports");
         }
     }
 }
