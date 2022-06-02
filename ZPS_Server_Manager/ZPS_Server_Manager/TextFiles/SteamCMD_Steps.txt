@@ -1,0 +1,51 @@
+﻿
+Please type these steps in the SteamCMD terminal window.
+
+
+1.
+login anonymous
+
+2.
+force_install_dir c:\steamcmd\zpsserver
+
+3.
+app_update 17505 validate
+
+Wait until you see the message: Success! App '17505' fully installed.
+
+take a look at server.cfg file which is located inside C:\steamcmd\zpsserver\zps\cfg.
+
+create startup.bat file and place it inside C:\steamcmd\zpsserver
+
+
+--------------------------------------------------------------------------
+
+
+@echo off
+cls
+
+set ServerTitle=CHANGEME-NAME-OF-MY-SERVER
+set ServerPlayers=24
+set ServerPort=27016
+set ServerMap=zpo_biotec
+set ServerCfg=server.cfg
+
+
+:: Steam Servers ID Token
+:: If you have subscribed workshop addons on your account, and have set AccountTokenID, it will download the workshop content.
+:: To setup a Token ID, head over to: https://steamcommunity.com/dev/managegameservers
+:: set AccountTokenID=
+
+set SourceTV="+tv_enable 1;tv_autorecord 1;tv_maxclients 0;tv_transmitall 1;tv_relayvoice 1"
+
+
+echo Protecting %ServerTitle% from crashes...
+title %ServerTitle%
+:srcds
+echo (%time%) %ServerTitle% started.
+start /wait srcds.exe -console -game zps -dedicated +map %ServerMap% -port %ServerPort% +maxplayers %ServerPlayers% -secure +sv_setsteamaccount %AccountTokenID% %SourceTV% +servercfgfile %ServerCfg%
+
+echo (%time%) WARNING: %ServerTitle% closed and/or crashed, restarting.
+goto srcds
+
+

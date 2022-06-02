@@ -129,3 +129,120 @@ Adde logic before and release version 1.0
 
 before custom theme added
 
+
+--------------------------
+
+https://www.yougetsignal.com/tools/open-ports/
+
+1. Create a folder for SteamCMD
+C:\steamcmd
+
+2. Download SteamCMD for Windows: https://steamcdn-a.akamaihd.net/client/installer/steamcmd.zip
+
+3. Extract the contents of the zip to the folder made in step 1.
+
+4. Open steamcmd.exe
+
+5. With the steamcmd.exe window open type,
+login anonymous
+
+6. After logging in type,
+force_install_dir c:\steamcmd\zpsserver
+
+7. Type and get yourself a beer,
+app_update 17505 validate
+
+8. Wait until you see the message: Success! App '17505' fully installed.
+
+9. Congrats your server has been installed. Now let’s take a look at the new location of our server.cfg file which is located inside C:\steamcmd\zpsserver\zps\cfg. Change whatever you must, a general rule of thumb is if you don’t know what something means, leave it.
+
+10. Now let’s start our server by creating our own startup.bat file (No it isn't an actual bat before you get excited.) Download the file below and place it inside C:\steamcmd\zpsserver
+
+
+
+
+SECTION 2 - Ports & Firewall Configuration
+
+1. On the Start menu, click Run, type WF.msc, and then click OK.
+
+2. In the Windows Firewall with Advanced Security, in the left pane, right-click Inbound Rules, and then click New Rule in the action pane.
+
+3. In the Rule Type dialog box, select Port, and then click Next.
+
+4. In the Protocol and Ports dialog box, select TCP. Select Specific local ports, and then type 27015 then click next.
+
+5. In the Action dialog box, select Allow the connection, and then click Next.
+
+6. In the Name dialog box, type a name and description for this rule, and then click Finish.
+
+7. Repeat the 6 steps above for UDP
+
+If after all these steps and you are still having problems with this then you should contact your hosting provider as this is practically a fool proof guide. You could also visit the famous port forwarding site.
+https://portforward.com/router.htm
+
+
+
+SECTION 3 - Administrating/Moderating Your Server
+
+Unfortunately there is always someone there to ruin everyones fun and because of that we have invaluable tools to help us moderate our servers. So, let's set ourselves up as Admin of our own server shall we?
+
+I have decided to provide a link in this section to Tabajara's guide of which I highly highly recommend. Tabajara's Guide.
+
+However, below is the absolute bare minimum guide of adding yourself as an admin as well as performing the most basic of commands.
+
+1. Go to;
+C:\steamcmd\zpsserver\zps\data\adminsystem
+
+2. Open admins.txt & groups.txt and read them (Make a backup of these incase you screw up!)
+
+3. Goto http://www.steam64.com/ and paste your profile URL into the big long search box at the top.
+
+You can find this by opening Steam and hovering over your username at the top right. Whilst hovering over your name a drop down menu should appear, click Profile.
+
+4. Now right click the background in your profile and click copy link.
+
+5. Paste the link into the http://www.steam64.com/ search box and click Find Steam ID
+
+6. A big green box should appear, copy only the numbers as that is your unique Steam64 ID. This is used to specify yourself as an Admin inside the admins.txt file.
+
+7. Now restart your server, however! Ensure nobody is enjoying a round on your server as restarting a server in the middle of a game can make people QQ which they have every right too!
+
+
+SECTION 7 - Updating the Server
+
+Before we begin please make a full backup of your server just incase things go wrong.
+
+1. Find your SteamCMD.exe and open it.
+
+2. Time to login, so type "login anonymous" without the quotes.
+
+3. After logging in type;
+force_install_dir c:\steamcmd\zpsserver
+(This is the location of your ZPS game server, if yours is different then please correct this now. Otherwise you will end up downloading and installing an aditional stock server)
+
+4. Type and get yourself a beer,
+app_update 17505
+
+5. Wait until you see the message: Success! App '17505' fully installed.
+
+6. You can now start your server as it should now be fully updated.
+
+
+
+IMPORTANT STUFF
+
+Inside your server.cfg it is mandatory that you immediately provide a secure password for your RCON. Please find rcon_password "" and inside those quotation marks place your secure password. RCON grants devastating powers to the one who holds the password for the night is dark and full of terror, don't even share this password with your dog!
+------------------------------------------------------------------
+If for some terrible reason you get the dreaded "SV_LAN" error inside the console *Cough* error spam when loading the startup.bat file, then unfortunately you're doomed! ... Kidding, to fix this;
+
+1. Install Steam Client on the server box and close your server.
+2. Run the steam client once.
+(You may get an OpenGL error which is expected, just ignore it)
+3. Close it once finishing doing its magic.
+4. Run startup.bat
+
+Now it should run fine, any problems again, please contact me or a member of the DEV team.
+
+Please be aware that Steam will start automatically on system start. You should disable it from starting as there is absolutely no need for it to be running. Also do not uninstall Steam, yes it's over 600MB but our ZPS server requires Steam to be installed on the server.
+------------------------------------------------------------------
+When updating your ZPS server you may have to reconfigure your server.cfg. I have just updated mine and it completely wiped my server.cfg. So, that is why we make a server backup before updating.

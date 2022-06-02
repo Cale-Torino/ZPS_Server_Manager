@@ -41,6 +41,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression.FileSystem" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -78,6 +79,7 @@
     <Compile Include="Forms\SplashForm.Designer.cs">
       <DependentUpon>SplashForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Classes\RunSteamCMDClass.cs" />
     <EmbeddedResource Include="Forms\AboutForm.resx">
       <DependentUpon>AboutForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -92,6 +94,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Forms\SplashForm.resx">
       <DependentUpon>SplashForm.cs</DependentUpon>
@@ -130,6 +133,8 @@
     <Content Include="Music\theme.mp3">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="TextFiles\Readme.txt" />
+    <Content Include="TextFiles\SteamCMD_Steps.txt" />
     <Content Include="TextFile.txt" />
     <Content Include="zps_101.ico" />
   </ItemGroup>

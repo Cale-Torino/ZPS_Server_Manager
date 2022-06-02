@@ -7,8 +7,8 @@ using System.Runtime.InteropServices;
 // associated with an assembly.
 [assembly: AssemblyTitle("ZPS_Server_Manager")]
 [assembly: AssemblyDescription("ZPS Server Manager Application, C.A Torino")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyConfiguration("ZPS_Server_Manager")]
+[assembly: AssemblyCompany("ZPS_Server_Manager")]
 [assembly: AssemblyProduct("ZPS_Server_Manager")]
 [assembly: AssemblyCopyright("Copyright ©  2022")]
 [assembly: AssemblyTrademark("")]

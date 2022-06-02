@@ -32,12 +32,16 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.GetSteamCMDbutton = new System.Windows.Forms.Button();
+            this.SteamDirbutton = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(7)))), ((int)(((byte)(7)))));
+            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aboutToolStripMenuItem});
@@ -65,12 +69,51 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(305, 169);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(157, 20);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "SteamCMD Location";
+            // 
+            // GetSteamCMDbutton
+            // 
+            this.GetSteamCMDbutton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(7)))), ((int)(((byte)(7)))));
+            this.GetSteamCMDbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.GetSteamCMDbutton.ForeColor = System.Drawing.Color.White;
+            this.GetSteamCMDbutton.Location = new System.Drawing.Point(12, 209);
+            this.GetSteamCMDbutton.Name = "GetSteamCMDbutton";
+            this.GetSteamCMDbutton.Size = new System.Drawing.Size(142, 40);
+            this.GetSteamCMDbutton.TabIndex = 4;
+            this.GetSteamCMDbutton.Text = "Get SteamCMD";
+            this.GetSteamCMDbutton.UseVisualStyleBackColor = true;
+            this.GetSteamCMDbutton.Click += new System.EventHandler(this.GetSteamCMDbutton_Click);
+            // 
+            // SteamDirbutton
+            // 
+            this.SteamDirbutton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(7)))), ((int)(((byte)(7)))));
+            this.SteamDirbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SteamDirbutton.ForeColor = System.Drawing.Color.White;
+            this.SteamDirbutton.Location = new System.Drawing.Point(309, 192);
+            this.SteamDirbutton.Name = "SteamDirbutton";
+            this.SteamDirbutton.Size = new System.Drawing.Size(370, 29);
+            this.SteamDirbutton.TabIndex = 5;
+            this.SteamDirbutton.Text = "Click here to select SteamCMD location";
+            this.SteamDirbutton.UseVisualStyleBackColor = true;
+            this.SteamDirbutton.Click += new System.EventHandler(this.SteamDirbutton_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.SteamDirbutton);
+            this.Controls.Add(this.GetSteamCMDbutton);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -93,6 +136,9 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button GetSteamCMDbutton;
+        private System.Windows.Forms.Button SteamDirbutton;
     }
 }
 
