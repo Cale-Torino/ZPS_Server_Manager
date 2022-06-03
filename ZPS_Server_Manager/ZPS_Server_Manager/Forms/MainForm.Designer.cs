@@ -36,12 +36,16 @@
             this.GetSteamCMDbutton = new System.Windows.Forms.Button();
             this.SteamDirbutton = new System.Windows.Forms.Button();
             this.OpenPortForwardbutton = new System.Windows.Forms.Button();
+            this.Servercfgbutton = new System.Windows.Forms.Button();
+            this.Adminsbutton = new System.Windows.Forms.Button();
+            this.Groupsbutton = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(7)))), ((int)(((byte)(7)))));
+            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aboutToolStripMenuItem});
@@ -118,12 +122,54 @@
             this.OpenPortForwardbutton.UseVisualStyleBackColor = true;
             this.OpenPortForwardbutton.Click += new System.EventHandler(this.OpenPortForwardbutton_Click);
             // 
+            // Servercfgbutton
+            // 
+            this.Servercfgbutton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(7)))), ((int)(((byte)(7)))));
+            this.Servercfgbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Servercfgbutton.ForeColor = System.Drawing.Color.White;
+            this.Servercfgbutton.Location = new System.Drawing.Point(171, 255);
+            this.Servercfgbutton.Name = "Servercfgbutton";
+            this.Servercfgbutton.Size = new System.Drawing.Size(153, 40);
+            this.Servercfgbutton.TabIndex = 7;
+            this.Servercfgbutton.Text = "Open server.cfg";
+            this.Servercfgbutton.UseVisualStyleBackColor = true;
+            this.Servercfgbutton.Click += new System.EventHandler(this.Servercfgbutton_Click);
+            // 
+            // Adminsbutton
+            // 
+            this.Adminsbutton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(7)))), ((int)(((byte)(7)))));
+            this.Adminsbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Adminsbutton.ForeColor = System.Drawing.Color.White;
+            this.Adminsbutton.Location = new System.Drawing.Point(12, 301);
+            this.Adminsbutton.Name = "Adminsbutton";
+            this.Adminsbutton.Size = new System.Drawing.Size(153, 40);
+            this.Adminsbutton.TabIndex = 8;
+            this.Adminsbutton.Text = "Open admins.txt";
+            this.Adminsbutton.UseVisualStyleBackColor = true;
+            this.Adminsbutton.Click += new System.EventHandler(this.Adminsbutton_Click);
+            // 
+            // Groupsbutton
+            // 
+            this.Groupsbutton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(7)))), ((int)(((byte)(7)))));
+            this.Groupsbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Groupsbutton.ForeColor = System.Drawing.Color.White;
+            this.Groupsbutton.Location = new System.Drawing.Point(171, 301);
+            this.Groupsbutton.Name = "Groupsbutton";
+            this.Groupsbutton.Size = new System.Drawing.Size(153, 40);
+            this.Groupsbutton.TabIndex = 9;
+            this.Groupsbutton.Text = "Open groups.txt";
+            this.Groupsbutton.UseVisualStyleBackColor = true;
+            this.Groupsbutton.Click += new System.EventHandler(this.Groupsbutton_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Groupsbutton);
+            this.Controls.Add(this.Adminsbutton);
+            this.Controls.Add(this.Servercfgbutton);
             this.Controls.Add(this.OpenPortForwardbutton);
             this.Controls.Add(this.SteamDirbutton);
             this.Controls.Add(this.GetSteamCMDbutton);
@@ -154,6 +200,9 @@
         private System.Windows.Forms.Button GetSteamCMDbutton;
         private System.Windows.Forms.Button SteamDirbutton;
         private System.Windows.Forms.Button OpenPortForwardbutton;
+        private System.Windows.Forms.Button Servercfgbutton;
+        private System.Windows.Forms.Button Adminsbutton;
+        private System.Windows.Forms.Button Groupsbutton;
     }
 }
 

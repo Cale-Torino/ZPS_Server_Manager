@@ -16,18 +16,11 @@ namespace ZPS_Server_Manager
 {
     public partial class SplashForm : Form
     {
-        //private readonly Classes.Mp3Class _mp3player;
-        private readonly int _handel;
+        private int _handel;
         public SplashForm()
         {
             InitializeComponent();
             PlaySound();
-            //_mp3player = new Classes.Mp3Class(@"Music\theme.mp3");//MPEGVideo
-            //if (_mp3player != null)
-            //{
-                //MessageBox.Show("hello");
-                //_mp3player.Play();
-            //}
         }
         Timer myTimer = new Timer();
         private void PlaySound()
@@ -35,7 +28,7 @@ namespace ZPS_Server_Manager
             try
             {
                 BassClass.BASS_Init(-1, 44100, DeviceInitFlagsClass.DeviceInitFlags.Default, IntPtr.Zero);
-                int _handel = BassClass.BASS_StreamCreateFile(false, "Music\\theme.mp3", 0L, 0L, BassFlagsClass.BassFlags.Default);
+                _handel = BassClass.BASS_StreamCreateFile(false, "Music\\theme.mp3", 0L, 0L, BassFlagsClass.BassFlags.Default);
                 BassClass.BASS_ChannelPlay(_handel, false);
             }
             catch (Exception ex)
@@ -91,11 +84,6 @@ namespace ZPS_Server_Manager
         {
             Invoke((MethodInvoker)delegate
             {
-                // close the form on the forms thread
-                //if (_mp3player != null)
-                //{
-                //_mp3player.Dispose();
-                //}
                 StopSound();
                 Close();
                 myTimer.Stop();
