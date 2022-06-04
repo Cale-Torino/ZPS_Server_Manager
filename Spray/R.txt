@@ -14,4 +14,18 @@ https://nemstools.github.io/pages/VTFLib-Download.html
 
 https://steamcommunity.com/sharedfiles/filedetails/?id=1288408087
 
+https://ezgif.com/split
+
+E:\steam\steamapps\common\Zombie Panic Source\zps\materials\vgui\logos
+
+get gif file
+
+get every imag from the gif file extracted
+
+now import into VTFEDId
+
+select animation option
+
+eport vtf and export vmt
+
 
