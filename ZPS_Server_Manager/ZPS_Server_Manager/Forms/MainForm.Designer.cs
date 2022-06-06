@@ -39,6 +39,7 @@
             this.Servercfgbutton = new System.Windows.Forms.Button();
             this.Adminsbutton = new System.Windows.Forms.Button();
             this.Groupsbutton = new System.Windows.Forms.Button();
+            this.readMeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,7 +49,8 @@
             this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.aboutToolStripMenuItem});
+            this.aboutToolStripMenuItem,
+            this.readMeToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 33);
@@ -161,6 +163,14 @@
             this.Groupsbutton.UseVisualStyleBackColor = true;
             this.Groupsbutton.Click += new System.EventHandler(this.Groupsbutton_Click);
             // 
+            // readMeToolStripMenuItem
+            // 
+            this.readMeToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.readMeToolStripMenuItem.Name = "readMeToolStripMenuItem";
+            this.readMeToolStripMenuItem.Size = new System.Drawing.Size(92, 29);
+            this.readMeToolStripMenuItem.Text = "ReadMe";
+            this.readMeToolStripMenuItem.Click += new System.EventHandler(this.readMeToolStripMenuItem_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -203,6 +213,7 @@
         private System.Windows.Forms.Button Servercfgbutton;
         private System.Windows.Forms.Button Adminsbutton;
         private System.Windows.Forms.Button Groupsbutton;
+        private System.Windows.Forms.ToolStripMenuItem readMeToolStripMenuItem;
     }
 }
 

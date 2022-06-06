@@ -165,5 +165,14 @@ namespace ZPS_Server_Manager
                 return;
             }
         }
+
+        private void readMeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //Open the readme form
+            using (Form f = new ReadmeForm())
+            {
+                f.ShowDialog();
+            }
+        }
     }
 }
