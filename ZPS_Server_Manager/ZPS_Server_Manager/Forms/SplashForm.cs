@@ -56,6 +56,7 @@ namespace ZPS_Server_Manager
         }
         private void SplashForm_Load(object sender, EventArgs e)
         {
+            pictureBox.Cursor = new Cursor(CustomCursorClass.LoadCursorFromFile("Cursor\\Wo.ani"));
             CreateFolder();
             label2.Text = "Version: " + Application.ProductVersion;//Get version from AssemblyInfo.cs [assembly: AssemblyFileVersion("1.0.1")]
 
@@ -89,5 +90,6 @@ namespace ZPS_Server_Manager
                 myTimer.Stop();
             });
         }
+
     }
 }

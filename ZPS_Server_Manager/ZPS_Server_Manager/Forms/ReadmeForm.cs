@@ -20,6 +20,7 @@ namespace ZPS_Server_Manager
 
         private void ReadmeForm_Load(object sender, EventArgs e)
         {
+            Cursor = new Cursor(CustomCursorClass.LoadCursorFromFile("Cursor\\Hn.cur"));
             LoggerClass.WriteLine(" *** Readme Form Show Success [ReadmeForm] *** ");
             try
             {
