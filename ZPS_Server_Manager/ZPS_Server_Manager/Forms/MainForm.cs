@@ -72,13 +72,13 @@ namespace ZPS_Server_Manager
             //check that cmd has not been installed already
             try
             {
-/*                using (WebClient wc = new WebClient())
-                {
-                    wc.DownloadFileCompleted += new AsyncCompletedEventHandler(Downloadcomplete);
-                    wc.DownloadFileAsync(new Uri("https://steamcdn-a.akamaihd.net/client/installer/steamcmd.zip"), $@"{Properties.Settings.Default.SteamCMDPath}\steamcmd.zip");
-                    
-                }*/
-                RunProcess($@"{Application.StartupPath}\TextFiles\SteamCMD_Steps.txt");
+                /*                using (WebClient wc = new WebClient())
+                                {
+                                    wc.DownloadFileCompleted += new AsyncCompletedEventHandler(Downloadcomplete);
+                                    wc.DownloadFileAsync(new Uri("https://steamcdn-a.akamaihd.net/client/installer/steamcmd.zip"), $@"{Properties.Settings.Default.SteamCMDPath}\steamcmd.zip");
+
+                                }*/
+                ProcessClass.RunProcess($@"{Application.StartupPath}\TextFiles\SteamCMD_Steps.txt");
             }
             catch (Exception ex)
             {
@@ -93,19 +93,6 @@ namespace ZPS_Server_Manager
             bool udp = PortFirewallClass.GetIsRuleActiveAsync("ZPS_UDP_Firewall_Rule");
             LoggerClass.WriteLine($" *** Checkfirewalrules TCP is Active?: {tcp} [MainForm] ***");
             LoggerClass.WriteLine($" *** Checkfirewalrules UDP is Active?: {udp} [MainForm] ***");
-        }
-
-        private void RunProcess(string path)
-        {
-            using (Process p = new Process())
-            {
-                p.StartInfo = new ProcessStartInfo()
-                {
-                    UseShellExecute = true,
-                    FileName = path
-                };
-                p.Start();
-            }
         }
 
         private void Addrules()
@@ -128,7 +115,7 @@ namespace ZPS_Server_Manager
         {
             try
             {
-                RunProcess($@"{Properties.Settings.Default.SteamCMDPath}\steamcmd\zpsserver\zps\cfg\server.cfg");
+                ProcessClass.RunProcess($@"{Properties.Settings.Default.SteamCMDPath}\steamcmd\zpsserver\zps\cfg\server.cfg");
             }
             catch (Exception ex)
             {
@@ -142,7 +129,7 @@ namespace ZPS_Server_Manager
         {
             try
             {
-                RunProcess($@"{Properties.Settings.Default.SteamCMDPath}\steamcmd\zpsserver\zps\data\adminsystem\admins.txt");
+                ProcessClass.RunProcess($@"{Properties.Settings.Default.SteamCMDPath}\steamcmd\zpsserver\zps\data\adminsystem\admins.txt");
             }
             catch (Exception ex)
             {
@@ -156,7 +143,7 @@ namespace ZPS_Server_Manager
         {
             try
             {
-                RunProcess($@"{Properties.Settings.Default.SteamCMDPath}\steamcmd\zpsserver\zps\data\adminsystem\groups.txt");
+                ProcessClass.RunProcess($@"{Properties.Settings.Default.SteamCMDPath}\steamcmd\zpsserver\zps\data\adminsystem\groups.txt");
             }
             catch (Exception ex)
             {
