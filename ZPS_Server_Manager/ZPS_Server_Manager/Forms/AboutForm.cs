@@ -21,6 +21,7 @@ namespace ZPS_Server_Manager
         }
         private void PlaySound()
         {
+            LoggerClass.WriteLine($" *** PlaySound [AboutForm] ***");
             try
             {
                 BassClass.BASS_Init(-1, 44100, DeviceInitFlagsClass.DeviceInitFlags.Default, IntPtr.Zero);

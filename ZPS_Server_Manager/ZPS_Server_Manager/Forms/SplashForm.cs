@@ -25,6 +25,7 @@ namespace ZPS_Server_Manager
         Timer myTimer = new Timer();
         private void PlaySound()
         {
+            LoggerClass.WriteLine($" *** PlaySound [SplashForm] ***");
             try
             {
                 BassClass.BASS_Init(-1, 44100, DeviceInitFlagsClass.DeviceInitFlags.Default, IntPtr.Zero);

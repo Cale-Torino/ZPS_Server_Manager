@@ -23,6 +23,7 @@ namespace ZPS_Server_Manager
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            LoggerClass.WriteLine($" *** aboutToolStripMenuItem_Click [MainForm] ***");
             //Open the about form
             using (Form f = new AboutForm())
             {
@@ -49,6 +50,7 @@ namespace ZPS_Server_Manager
 
         private void SteamDirbutton_Click(object sender, EventArgs e)
         {
+            LoggerClass.WriteLine($" *** SteamDirbutton_Click [MainForm] ***");
             FolderBrowserDialog f = new FolderBrowserDialog();
             f.Description = "Please select the folder where you would like to install SteamCMD";
 
@@ -62,6 +64,7 @@ namespace ZPS_Server_Manager
         }
         private void Downloadcomplete(object sender, AsyncCompletedEventArgs e)
         {
+            LoggerClass.WriteLine($" *** SteamCMD Download Complete [MainForm] ***");
             MessageBox.Show("Download SteamCMD", "Download SteamCMD Complete", MessageBoxButtons.OK, MessageBoxIcon.Information);
             ZipFile.ExtractToDirectory($@"{Properties.Settings.Default.SteamCMDPath}\steamcmd.zip", $@"{Properties.Settings.Default.SteamCMDPath}\steamcmd");
             RunSteamCMDClass.RunExeActions();
@@ -78,6 +81,7 @@ namespace ZPS_Server_Manager
                                     wc.DownloadFileAsync(new Uri("https://steamcdn-a.akamaihd.net/client/installer/steamcmd.zip"), $@"{Properties.Settings.Default.SteamCMDPath}\steamcmd.zip");
 
                                 }*/
+                LoggerClass.WriteLine($" *** GetSteamCMDbutton_Click [MainForm] ***");
                 ProcessClass.RunProcess($@"{Application.StartupPath}\TextFiles\SteamCMD_Steps.txt");
             }
             catch (Exception ex)
@@ -101,6 +105,8 @@ namespace ZPS_Server_Manager
             PortFirewallClass.AddUDPRule("ZPS_UDP_Firewall_Rule", "27015");
             PortFirewallClass.GetIsRuleActiveAsync("ZPS_TCP_Firewall_Rule");
             PortFirewallClass.GetIsRuleActiveAsync("ZPS_UDP_Firewall_Rule");
+            LoggerClass.WriteLine($" *** Addrules ZPS_TCP_Firewall_Rule 27015 [MainForm] ***");
+            LoggerClass.WriteLine($" *** Addrules ZPS_UDP_Firewall_Rule 27015 [MainForm] ***");
         }
 
         private void OpenPortForwardbutton_Click(object sender, EventArgs e)
@@ -109,12 +115,14 @@ namespace ZPS_Server_Manager
             //Process.Start("https://www.yougetsignal.com/tools/open-ports");
             Addrules();
             //RunProcess("WF.msc");
+            LoggerClass.WriteLine($" *** OpenPortForwardbutton_Click [MainForm] ***");
         }
 
         private void Servercfgbutton_Click(object sender, EventArgs e)
         {
             try
             {
+                LoggerClass.WriteLine($" *** Servercfgbutton_Click [MainForm] ***");
                 ProcessClass.RunProcess($@"{Properties.Settings.Default.SteamCMDPath}\steamcmd\zpsserver\zps\cfg\server.cfg");
             }
             catch (Exception ex)
@@ -129,6 +137,7 @@ namespace ZPS_Server_Manager
         {
             try
             {
+                LoggerClass.WriteLine($" *** Adminsbutton_Click [MainForm] ***");
                 ProcessClass.RunProcess($@"{Properties.Settings.Default.SteamCMDPath}\steamcmd\zpsserver\zps\data\adminsystem\admins.txt");
             }
             catch (Exception ex)
@@ -143,6 +152,7 @@ namespace ZPS_Server_Manager
         {
             try
             {
+                LoggerClass.WriteLine($" *** Groupsbutton_Click [MainForm] ***");
                 ProcessClass.RunProcess($@"{Properties.Settings.Default.SteamCMDPath}\steamcmd\zpsserver\zps\data\adminsystem\groups.txt");
             }
             catch (Exception ex)
@@ -156,6 +166,7 @@ namespace ZPS_Server_Manager
         private void readMeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //Open the readme form
+            LoggerClass.WriteLine($" *** readMeToolStripMenuItem_Click [MainForm] ***");
             using (Form f = new ReadmeForm())
             {
                 f.ShowDialog();
