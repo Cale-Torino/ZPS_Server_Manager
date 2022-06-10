@@ -55,7 +55,6 @@
   <ItemGroup>
     <Compile Include="Classes\BassClass.cs" />
     <Compile Include="Classes\BassFlagsClass.cs" />
-    <Compile Include="Classes\Mp3Class.cs" />
     <Compile Include="Classes\DeviceInitFlagsClass.cs" />
     <Compile Include="Classes\CustomCursorClass.cs" />
     <Compile Include="Forms\AboutForm.cs">
