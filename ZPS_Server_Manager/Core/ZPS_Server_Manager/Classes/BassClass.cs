@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ZPS_Server_Manager
+namespace ZPS_Server_Manager.Classes
 {
     public class BassClass : IDisposable
     {
@@ -116,8 +116,8 @@ namespace ZPS_Server_Manager
         //     and the ManagedBass.BassInfo.InitFlags.
         //     On Linux and Windows CE, the length of the device's buffer can be set via the
         //     ManagedBass.Bass.PlaybackBufferLength config option.
-        internal static extern bool BASS_Init(int Device = -1, int Frequency = 44100, DeviceInitFlagsClass.DeviceInitFlags Flags = DeviceInitFlagsClass.DeviceInitFlags.Default, IntPtr Win = default(IntPtr), IntPtr ClsID = default(IntPtr));
-        [DllImport(BASS_lib, CallingConvention = CallingConvention.StdCall)]
+        internal static extern bool BASS_Init(int Device = -1, int Frequency = 44100, DeviceInitFlagsClass.DeviceInitFlags Flags = DeviceInitFlagsClass.DeviceInitFlags.Default, IntPtr Win = default, IntPtr ClsID = default);
+        [DllImport(BASS_lib, CallingConvention = CallingConvention.StdCall, CharSet = CharSet.Unicode)]
         //
         // Summary:
         //     Creates a sample stream from an MP3, MP2, MP1, OGG, WAV, AIFF or plugin supported

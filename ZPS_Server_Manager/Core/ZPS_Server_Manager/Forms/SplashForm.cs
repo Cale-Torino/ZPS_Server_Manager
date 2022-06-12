@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.IO;
 using System.Linq;
-using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Timers;
 using System.Windows.Forms;
+using ZPS_Server_Manager.Classes;
 using Timer = System.Timers.Timer;
 
 namespace ZPS_Server_Manager
@@ -22,7 +21,7 @@ namespace ZPS_Server_Manager
             InitializeComponent();
             PlaySound();
         }
-        Timer myTimer = new Timer();
+        Timer myTimer = new();
         private void PlaySound()
         {
             LoggerClass.WriteLine($" *** PlaySound [SplashForm] ***");
@@ -65,7 +64,7 @@ namespace ZPS_Server_Manager
             myTimer.Interval = 6000;
             myTimer.Start();//start timer
         }
-        private void CreateFolder()
+        private static void CreateFolder()
         {
             try
             {
@@ -82,15 +81,17 @@ namespace ZPS_Server_Manager
                 return;
             }
         }
-        public void TimeUp(object sender, ElapsedEventArgs e)
+        public void TimeUp(object? sender, ElapsedEventArgs e)
         {
             Invoke((MethodInvoker)delegate
             {
                 StopSound();
-                Close();
                 myTimer.Stop();
+                Hide();
+                using Form f = new MainForm("test");
+                f.ShowDialog();
+                Close();
             });
         }
-
     }
 }
