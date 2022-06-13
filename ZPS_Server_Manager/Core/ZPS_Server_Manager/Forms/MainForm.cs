@@ -97,10 +97,16 @@ namespace ZPS_Server_Manager
         {
             LoggerClass.WriteLine($" *** aboutToolStripMenuItem_Click [MainForm] ***");
             //Open the about form
-            using (Form f = new AboutForm())
-            {
-                f.ShowDialog();
-            }
+            using Form f = new AboutForm();
+            f.ShowDialog();
+        }
+
+        private void readMeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //Open the readme form
+            LoggerClass.WriteLine($" *** readMeToolStripMenuItem_Click [MainForm] ***");
+            using Form f = new ReadmeForm();
+            f.ShowDialog();
         }
     }
 }

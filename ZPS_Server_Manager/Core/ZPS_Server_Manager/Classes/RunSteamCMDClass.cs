@@ -12,7 +12,7 @@ namespace ZPS_Server_Manager.Classes
         public static void RunExeActions()
         {
             string pathToFile = $@"{Properties.Settings.Default.SteamCMDPath}\steamcmd.exe";
-            Process runProg = new Process();
+            Process runProg = new();
             try
             {
                 runProg.StartInfo.FileName = pathToFile;

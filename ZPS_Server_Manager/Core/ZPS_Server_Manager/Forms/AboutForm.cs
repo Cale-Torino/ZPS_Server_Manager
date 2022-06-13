@@ -24,8 +24,8 @@ namespace ZPS_Server_Manager
             LoggerClass.WriteLine($" *** PlaySound [AboutForm] ***");
             try
             {
-                //BassClass.BASS_Init(-1, 44100, DeviceInitFlagsClass.DeviceInitFlags.Default, IntPtr.Zero);
-                BassClass.BASS_Init();
+                BassClass.BASS_Init(-1, 44100, DeviceInitFlagsClass.DeviceInitFlags.Default, IntPtr.Zero);
+                //BassClass.BASS_Init();
                 _handel = BassClass.BASS_StreamCreateFile(false, "Music\\menu.mp3", 0L, 0L, BassFlagsClass.BassFlags.Loop);
                 BassClass.BASS_ChannelPlay(_handel, true);
             }
@@ -53,15 +53,33 @@ namespace ZPS_Server_Manager
         }
         private void AboutForm_Load(object sender, EventArgs e)
         {
-            //pictureBox.Cursor = new Cursor(CustomCursorClass.LoadCursorFromFile("Cursor\\Wo.ani"));
+            pictureBox.Cursor = new Cursor(CustomCursorClass.LoadCursorFromFile("Cursor\\Wo.ani"));
             IntPtr handle = CustomCursorClass.LoadCursorFromFile("Cursor\\Hn.cur");
             Cursor = new Cursor(handle);
-            //label.Text = "Version: " + Application.ProductVersion;
+            label2.Text = "Version: " + Application.ProductVersion;
         }
 
         private void AboutForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             StopSound();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            //Opens link to https://github.com/Cale-Torino
+            System.Diagnostics.Process.Start("https://github.com/Cale-Torino");
+        }
+
+        private void label1_MouseEnter(object sender, EventArgs e)
+        {
+            IntPtr handle = CustomCursorClass.LoadCursorFromFile("Cursor\\Hl.cur");
+            Cursor = new Cursor(handle);
+        }
+
+        private void label1_MouseLeave(object sender, EventArgs e)
+        {
+            IntPtr handle = CustomCursorClass.LoadCursorFromFile("Cursor\\Hn.cur");
+            Cursor = new Cursor(handle);
         }
     }
 }

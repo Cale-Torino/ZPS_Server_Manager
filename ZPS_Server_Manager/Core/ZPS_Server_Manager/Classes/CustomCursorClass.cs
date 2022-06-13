@@ -9,7 +9,7 @@ namespace ZPS_Server_Manager.Classes
 {
     public class CustomCursorClass
     {
-        [DllImport("user32.dll")]
-        public static extern IntPtr LoadCursorFromFile(string fileName);
+        [DllImport("user32.dll", CharSet = CharSet.Unicode)]
+        internal static extern IntPtr LoadCursorFromFile(string fileName);
     }
 }
