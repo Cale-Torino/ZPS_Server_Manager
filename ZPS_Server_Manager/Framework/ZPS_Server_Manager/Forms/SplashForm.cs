@@ -20,7 +20,6 @@ namespace ZPS_Server_Manager
         public SplashForm()
         {
             InitializeComponent();
-            PlaySound();
         }
         Timer myTimer = new Timer();
         private void PlaySound()
@@ -57,8 +56,9 @@ namespace ZPS_Server_Manager
         }
         private void SplashForm_Load(object sender, EventArgs e)
         {
-            pictureBox.Cursor = new Cursor(CustomCursorClass.LoadCursorFromFile("Cursor\\Wo.ani"));
             CreateFolder();
+            PlaySound();
+            pictureBox.Cursor = new Cursor(CustomCursorClass.LoadCursorFromFile("Cursor\\Wo.ani"));
             label2.Text = "Version: " + Application.ProductVersion;//Get version from AssemblyInfo.cs [assembly: AssemblyFileVersion("1.0.1")]
 
             myTimer.Elapsed += new ElapsedEventHandler(TimeUp);

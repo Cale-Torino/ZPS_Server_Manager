@@ -11,7 +11,7 @@ namespace ZPS_Server_Manager.Classes
     {
         public static void RunProcess(string path)
         {
-            using Process p = new Process();
+            using Process p = new();
             p.StartInfo = new ProcessStartInfo()
             {
                 UseShellExecute = true,

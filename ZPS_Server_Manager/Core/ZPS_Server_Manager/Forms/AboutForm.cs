@@ -67,7 +67,10 @@ namespace ZPS_Server_Manager
         private void label1_Click(object sender, EventArgs e)
         {
             //Opens link to https://github.com/Cale-Torino
-            System.Diagnostics.Process.Start("https://github.com/Cale-Torino");
+            ProcessClass.RunProcess("https://github.com/Cale-Torino");
+            //string url = "https://github.com/Cale-Torino";
+            //url = url.Replace("&", "^&");
+            //System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo("cmd", $"/c start {url}") { CreateNoWindow = true });
         }
 
         private void label1_MouseEnter(object sender, EventArgs e)

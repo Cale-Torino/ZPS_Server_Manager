@@ -9,8 +9,10 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <ApplicationIcon>img\zps_101.ico</ApplicationIcon>
     <PlatformTarget>x86</PlatformTarget>
+    <ProduceReferenceAssembly>True</ProduceReferenceAssembly>
+    <Platforms>x86;x64;AnyCPU</Platforms>
   </PropertyGroup>
-
+ 
   <ItemGroup>
     <COMReference Include="NetFwTypeLib">
       <VersionMinor>0</VersionMinor>
