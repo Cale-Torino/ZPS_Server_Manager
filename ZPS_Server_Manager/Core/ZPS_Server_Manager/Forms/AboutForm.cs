@@ -53,6 +53,7 @@ namespace ZPS_Server_Manager
         }
         private void AboutForm_Load(object sender, EventArgs e)
         {
+            DarkTitleBarClass.UseImmersiveDarkMode(Handle, true);
             pictureBox.Cursor = new Cursor(CustomCursorClass.LoadCursorFromFile("Cursor\\Wo.ani"));
             IntPtr handle = CustomCursorClass.LoadCursorFromFile("Cursor\\Hn.cur");
             Cursor = new Cursor(handle);
@@ -77,12 +78,14 @@ namespace ZPS_Server_Manager
         {
             IntPtr handle = CustomCursorClass.LoadCursorFromFile("Cursor\\Hl.cur");
             Cursor = new Cursor(handle);
+            label1.ForeColor = Color.DodgerBlue;
         }
 
         private void label1_MouseLeave(object sender, EventArgs e)
         {
             IntPtr handle = CustomCursorClass.LoadCursorFromFile("Cursor\\Hn.cur");
             Cursor = new Cursor(handle);
+            label1.ForeColor = Color.RoyalBlue;
         }
     }
 }

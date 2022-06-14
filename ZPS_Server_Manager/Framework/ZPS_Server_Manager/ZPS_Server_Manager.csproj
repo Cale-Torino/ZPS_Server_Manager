@@ -57,6 +57,7 @@
     <Compile Include="Classes\BassFlagsClass.cs" />
     <Compile Include="Classes\DeviceInitFlagsClass.cs" />
     <Compile Include="Classes\CustomCursorClass.cs" />
+    <Compile Include="DarkTitleBarClass.cs" />
     <Compile Include="Forms\AboutForm.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -32,10 +32,10 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.SteamDirbutton = new System.Windows.Forms.Button();
             this.GetSteamCMDbutton = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.OpenPortForwardbutton = new System.Windows.Forms.Button();
+            this.Servercfgbutton = new System.Windows.Forms.Button();
+            this.Adminsbutton = new System.Windows.Forms.Button();
+            this.Groupsbutton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -71,55 +71,55 @@
             this.GetSteamCMDbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.GetSteamCMDbutton.Location = new System.Drawing.Point(78, 261);
             this.GetSteamCMDbutton.Name = "GetSteamCMDbutton";
-            this.GetSteamCMDbutton.Size = new System.Drawing.Size(145, 34);
+            this.GetSteamCMDbutton.Size = new System.Drawing.Size(175, 34);
             this.GetSteamCMDbutton.TabIndex = 2;
             this.GetSteamCMDbutton.Text = "Get SteamCMD";
             this.GetSteamCMDbutton.UseVisualStyleBackColor = true;
             this.GetSteamCMDbutton.Click += new System.EventHandler(this.GetSteamCMDbutton_Click);
             // 
-            // button3
+            // OpenPortForwardbutton
             // 
-            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(7)))), ((int)(((byte)(7)))));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Location = new System.Drawing.Point(78, 301);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(112, 34);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
+            this.OpenPortForwardbutton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(7)))), ((int)(((byte)(7)))));
+            this.OpenPortForwardbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.OpenPortForwardbutton.Location = new System.Drawing.Point(78, 301);
+            this.OpenPortForwardbutton.Name = "OpenPortForwardbutton";
+            this.OpenPortForwardbutton.Size = new System.Drawing.Size(175, 34);
+            this.OpenPortForwardbutton.TabIndex = 3;
+            this.OpenPortForwardbutton.Text = "Open Port Forward";
+            this.OpenPortForwardbutton.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // Servercfgbutton
             // 
-            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(7)))), ((int)(((byte)(7)))));
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Location = new System.Drawing.Point(196, 301);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(112, 34);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
+            this.Servercfgbutton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(7)))), ((int)(((byte)(7)))));
+            this.Servercfgbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Servercfgbutton.Location = new System.Drawing.Point(259, 261);
+            this.Servercfgbutton.Name = "Servercfgbutton";
+            this.Servercfgbutton.Size = new System.Drawing.Size(175, 34);
+            this.Servercfgbutton.TabIndex = 4;
+            this.Servercfgbutton.Text = "Open server.cfg";
+            this.Servercfgbutton.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // Adminsbutton
             // 
-            this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(7)))), ((int)(((byte)(7)))));
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Location = new System.Drawing.Point(78, 341);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(112, 34);
-            this.button5.TabIndex = 5;
-            this.button5.Text = "button5";
-            this.button5.UseVisualStyleBackColor = true;
+            this.Adminsbutton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(7)))), ((int)(((byte)(7)))));
+            this.Adminsbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Adminsbutton.Location = new System.Drawing.Point(78, 341);
+            this.Adminsbutton.Name = "Adminsbutton";
+            this.Adminsbutton.Size = new System.Drawing.Size(175, 34);
+            this.Adminsbutton.TabIndex = 5;
+            this.Adminsbutton.Text = "Open admins.txt";
+            this.Adminsbutton.UseVisualStyleBackColor = true;
             // 
-            // button6
+            // Groupsbutton
             // 
-            this.button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(7)))), ((int)(((byte)(7)))));
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Location = new System.Drawing.Point(196, 341);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(112, 34);
-            this.button6.TabIndex = 6;
-            this.button6.Text = "button6";
-            this.button6.UseVisualStyleBackColor = true;
+            this.Groupsbutton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(7)))), ((int)(((byte)(7)))));
+            this.Groupsbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Groupsbutton.Location = new System.Drawing.Point(259, 301);
+            this.Groupsbutton.Name = "Groupsbutton";
+            this.Groupsbutton.Size = new System.Drawing.Size(175, 34);
+            this.Groupsbutton.TabIndex = 6;
+            this.Groupsbutton.Text = "Open groups.txt";
+            this.Groupsbutton.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -166,10 +166,10 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.Groupsbutton);
+            this.Controls.Add(this.Adminsbutton);
+            this.Controls.Add(this.Servercfgbutton);
+            this.Controls.Add(this.OpenPortForwardbutton);
             this.Controls.Add(this.GetSteamCMDbutton);
             this.Controls.Add(this.SteamDirbutton);
             this.Controls.Add(this.groupBox1);
@@ -194,10 +194,10 @@
         private GroupBox groupBox1;
         private Button SteamDirbutton;
         private Button GetSteamCMDbutton;
-        private Button button3;
-        private Button button4;
-        private Button button5;
-        private Button button6;
+        private Button OpenPortForwardbutton;
+        private Button Servercfgbutton;
+        private Button Adminsbutton;
+        private Button Groupsbutton;
         private Label label1;
         private MenuStrip menuStrip1;
         private ToolStripMenuItem aboutToolStripMenuItem;

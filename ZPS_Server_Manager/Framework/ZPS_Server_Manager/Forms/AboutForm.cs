@@ -52,6 +52,7 @@ namespace ZPS_Server_Manager
         }
         private void AboutForm_Load(object sender, EventArgs e)
         {
+            DarkTitleBarClass.UseImmersiveDarkMode(Handle, true);
             pictureBox.Cursor = new Cursor(CustomCursorClass.LoadCursorFromFile("Cursor\\Wo.ani"));
             IntPtr handle = CustomCursorClass.LoadCursorFromFile("Cursor\\Hn.cur");
             Cursor = new Cursor(handle);

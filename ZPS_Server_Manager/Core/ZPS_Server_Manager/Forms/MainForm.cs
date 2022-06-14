@@ -1,5 +1,6 @@
 using System.ComponentModel;
 using System.IO.Compression;
+using System.Runtime.InteropServices;
 using ZPS_Server_Manager.Classes;
 
 namespace ZPS_Server_Manager
@@ -15,6 +16,7 @@ namespace ZPS_Server_Manager
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            DarkTitleBarClass.UseImmersiveDarkMode(Handle, true);
             IntPtr handle = CustomCursorClass.LoadCursorFromFile("Cursor\\Hn.cur");
             Cursor = new Cursor(handle);
             //Load all the saved properties from the config file on app startup
