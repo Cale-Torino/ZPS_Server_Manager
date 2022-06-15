@@ -110,5 +110,59 @@ namespace ZPS_Server_Manager
             using Form f = new ReadmeForm();
             f.ShowDialog();
         }
+
+        private void OpenPortForwardbutton_Click(object sender, EventArgs e)
+        {
+            //Opens link to https://www.yougetsignal.com/tools/open-ports
+            //Process.Start("https://www.yougetsignal.com/tools/open-ports");
+            Addrules();
+            //RunProcess("WF.msc");
+            LoggerClass.WriteLine($" *** OpenPortForwardbutton_Click [MainForm] ***");
+        }
+
+        private void Groupsbutton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                LoggerClass.WriteLine($" *** Groupsbutton_Click [MainForm] ***");
+                ProcessClass.RunProcess($@"{Properties.Settings.Default.SteamCMDPath}\steamcmd\zpsserver\zps\data\adminsystem\groups.txt");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Open groups.txt Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                LoggerClass.WriteLine(" *** Error:" + ex.Message + " [MainForm] ***");
+                return;
+            }
+        }
+
+        private void Servercfgbutton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                LoggerClass.WriteLine($" *** Servercfgbutton_Click [MainForm] ***");
+                ProcessClass.RunProcess($@"{Properties.Settings.Default.SteamCMDPath}\steamcmd\zpsserver\zps\cfg\server.cfg");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Open server.cfg Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                LoggerClass.WriteLine(" *** Error:" + ex.Message + " [MainForm] ***");
+                return;
+            }
+        }
+
+        private void Adminsbutton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                LoggerClass.WriteLine($" *** Adminsbutton_Click [MainForm] ***");
+                ProcessClass.RunProcess($@"{Properties.Settings.Default.SteamCMDPath}\steamcmd\zpsserver\zps\data\adminsystem\admins.txt");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Open admins.txt Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                LoggerClass.WriteLine(" *** Error:" + ex.Message + " [MainForm] ***");
+                return;
+            }
+        }
     }
 }

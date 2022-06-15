@@ -87,6 +87,7 @@
             this.OpenPortForwardbutton.TabIndex = 3;
             this.OpenPortForwardbutton.Text = "Open Port Forward";
             this.OpenPortForwardbutton.UseVisualStyleBackColor = true;
+            this.OpenPortForwardbutton.Click += new System.EventHandler(this.OpenPortForwardbutton_Click);
             // 
             // Servercfgbutton
             // 
@@ -98,6 +99,7 @@
             this.Servercfgbutton.TabIndex = 4;
             this.Servercfgbutton.Text = "Open server.cfg";
             this.Servercfgbutton.UseVisualStyleBackColor = true;
+            this.Servercfgbutton.Click += new System.EventHandler(this.Servercfgbutton_Click);
             // 
             // Adminsbutton
             // 
@@ -109,6 +111,7 @@
             this.Adminsbutton.TabIndex = 5;
             this.Adminsbutton.Text = "Open admins.txt";
             this.Adminsbutton.UseVisualStyleBackColor = true;
+            this.Adminsbutton.Click += new System.EventHandler(this.Adminsbutton_Click);
             // 
             // Groupsbutton
             // 
@@ -120,6 +123,7 @@
             this.Groupsbutton.TabIndex = 6;
             this.Groupsbutton.Text = "Open groups.txt";
             this.Groupsbutton.UseVisualStyleBackColor = true;
+            this.Groupsbutton.Click += new System.EventHandler(this.Groupsbutton_Click);
             // 
             // label1
             // 
