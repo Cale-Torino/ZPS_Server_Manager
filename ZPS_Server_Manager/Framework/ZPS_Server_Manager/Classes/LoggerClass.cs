@@ -1,20 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ZPS_Server_Manager
 {
     public class LoggerClass
     {
-
         //Create logfile log. file
-        private static readonly string LogFile = AppDomain.CurrentDomain.BaseDirectory + @"Logs\" + AppDomain.CurrentDomain.FriendlyName + "_" + DateTime.Now.ToString("yyyy-dd-M--HH-mm-ss") + ".log";
+        internal static string LogFile { get; set; } = AppDomain.CurrentDomain.BaseDirectory + @"Logs\" + AppDomain.CurrentDomain.FriendlyName + "_" + DateTime.Now.ToString("yyyy-dd-M--HH-mm-ss") + ".log";
 
-        public static void WriteLine(string txt)
+        internal static void WriteLine(string txt)
         {
             try
             {
@@ -28,7 +23,7 @@ namespace ZPS_Server_Manager
             }
         }
 
-        public static void DeleteLog()
+        internal static void DeleteLog()
         {
             try
             {

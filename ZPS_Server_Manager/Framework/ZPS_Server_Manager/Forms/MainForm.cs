@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.IO.Compression;
 using System.Linq;
 using System.Net;
@@ -46,7 +47,6 @@ namespace ZPS_Server_Manager
             {
                 GetSteamCMDbutton.Enabled = false;
             }
-            Checkfirewalrules();
         }
 
         private void SteamDirbutton_Click(object sender, EventArgs e)
@@ -91,13 +91,6 @@ namespace ZPS_Server_Manager
                 LoggerClass.WriteLine(" *** Error:" + ex.Message + " [MainForm] ***");
                 return;
             }
-        }
-        private void Checkfirewalrules()
-        {
-            bool tcp = PortFirewallClass.GetIsRuleActiveAsync("ZPS_TCP_Firewall_Rule");
-            bool udp = PortFirewallClass.GetIsRuleActiveAsync("ZPS_UDP_Firewall_Rule");
-            LoggerClass.WriteLine($" *** Checkfirewalrules TCP is Active?: {tcp} [MainForm] ***");
-            LoggerClass.WriteLine($" *** Checkfirewalrules UDP is Active?: {udp} [MainForm] ***");
         }
 
         private void Addrules()
@@ -172,6 +165,24 @@ namespace ZPS_Server_Manager
             {
                 f.ShowDialog();
             }
+        }
+
+        private void showLogFilesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ProcessClass.RunProcess($"{AppDomain.CurrentDomain.BaseDirectory}\\Logs\\");
+        }
+
+        private void viewCurrentLogToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (var f = new ShowLogsForm())
+            {
+                f.ShowDialog();
+            }
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Console.Beep();
         }
     }
 }

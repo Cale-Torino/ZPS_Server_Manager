@@ -32,6 +32,10 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.readMeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.logFilesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.showLogFilesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewCurrentLogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.GetSteamCMDbutton = new System.Windows.Forms.Button();
@@ -49,11 +53,11 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aboutToolStripMenuItem,
-            this.readMeToolStripMenuItem});
+            this.readMeToolStripMenuItem,
+            this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
-            this.menuStrip1.Size = new System.Drawing.Size(533, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(800, 33);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -61,7 +65,7 @@
             // 
             this.aboutToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(78, 29);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
@@ -69,18 +73,54 @@
             // 
             this.readMeToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.readMeToolStripMenuItem.Name = "readMeToolStripMenuItem";
-            this.readMeToolStripMenuItem.Size = new System.Drawing.Size(62, 22);
+            this.readMeToolStripMenuItem.Size = new System.Drawing.Size(92, 29);
             this.readMeToolStripMenuItem.Text = "ReadMe";
             this.readMeToolStripMenuItem.Click += new System.EventHandler(this.readMeToolStripMenuItem_Click);
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.logFilesToolStripMenuItem});
+            this.helpToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(65, 29);
+            this.helpToolStripMenuItem.Text = "Help";
+            // 
+            // logFilesToolStripMenuItem
+            // 
+            this.logFilesToolStripMenuItem.BackColor = System.Drawing.Color.Black;
+            this.logFilesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.showLogFilesToolStripMenuItem,
+            this.viewCurrentLogToolStripMenuItem});
+            this.logFilesToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.logFilesToolStripMenuItem.Name = "logFilesToolStripMenuItem";
+            this.logFilesToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.logFilesToolStripMenuItem.Text = "Log Files";
+            // 
+            // showLogFilesToolStripMenuItem
+            // 
+            this.showLogFilesToolStripMenuItem.BackColor = System.Drawing.Color.Black;
+            this.showLogFilesToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.showLogFilesToolStripMenuItem.Name = "showLogFilesToolStripMenuItem";
+            this.showLogFilesToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.showLogFilesToolStripMenuItem.Text = "Open Logs Folder";
+            this.showLogFilesToolStripMenuItem.Click += new System.EventHandler(this.showLogFilesToolStripMenuItem_Click);
+            // 
+            // viewCurrentLogToolStripMenuItem
+            // 
+            this.viewCurrentLogToolStripMenuItem.BackColor = System.Drawing.Color.Black;
+            this.viewCurrentLogToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.viewCurrentLogToolStripMenuItem.Name = "viewCurrentLogToolStripMenuItem";
+            this.viewCurrentLogToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.viewCurrentLogToolStripMenuItem.Text = "View Current Log";
+            this.viewCurrentLogToolStripMenuItem.Click += new System.EventHandler(this.viewCurrentLogToolStripMenuItem_Click);
             // 
             // groupBox1
             // 
             this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(8, 23);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Location = new System.Drawing.Point(12, 35);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox1.Size = new System.Drawing.Size(133, 65);
+            this.groupBox1.Size = new System.Drawing.Size(200, 100);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
@@ -89,10 +129,9 @@
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(203, 110);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(304, 169);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(105, 13);
+            this.label1.Size = new System.Drawing.Size(157, 20);
             this.label1.TabIndex = 3;
             this.label1.Text = "SteamCMD Location";
             // 
@@ -101,10 +140,9 @@
             this.GetSteamCMDbutton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(7)))), ((int)(((byte)(7)))));
             this.GetSteamCMDbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.GetSteamCMDbutton.ForeColor = System.Drawing.Color.White;
-            this.GetSteamCMDbutton.Location = new System.Drawing.Point(8, 136);
-            this.GetSteamCMDbutton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.GetSteamCMDbutton.Location = new System.Drawing.Point(12, 209);
             this.GetSteamCMDbutton.Name = "GetSteamCMDbutton";
-            this.GetSteamCMDbutton.Size = new System.Drawing.Size(102, 26);
+            this.GetSteamCMDbutton.Size = new System.Drawing.Size(153, 40);
             this.GetSteamCMDbutton.TabIndex = 4;
             this.GetSteamCMDbutton.Text = "Get SteamCMD";
             this.GetSteamCMDbutton.UseVisualStyleBackColor = true;
@@ -115,10 +153,9 @@
             this.SteamDirbutton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(7)))), ((int)(((byte)(7)))));
             this.SteamDirbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SteamDirbutton.ForeColor = System.Drawing.Color.White;
-            this.SteamDirbutton.Location = new System.Drawing.Point(206, 125);
-            this.SteamDirbutton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.SteamDirbutton.Location = new System.Drawing.Point(309, 192);
             this.SteamDirbutton.Name = "SteamDirbutton";
-            this.SteamDirbutton.Size = new System.Drawing.Size(247, 26);
+            this.SteamDirbutton.Size = new System.Drawing.Size(370, 40);
             this.SteamDirbutton.TabIndex = 5;
             this.SteamDirbutton.Text = "Click here to select SteamCMD location";
             this.SteamDirbutton.UseVisualStyleBackColor = true;
@@ -129,10 +166,9 @@
             this.OpenPortForwardbutton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(7)))), ((int)(((byte)(7)))));
             this.OpenPortForwardbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.OpenPortForwardbutton.ForeColor = System.Drawing.Color.White;
-            this.OpenPortForwardbutton.Location = new System.Drawing.Point(8, 166);
-            this.OpenPortForwardbutton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.OpenPortForwardbutton.Location = new System.Drawing.Point(12, 255);
             this.OpenPortForwardbutton.Name = "OpenPortForwardbutton";
-            this.OpenPortForwardbutton.Size = new System.Drawing.Size(102, 26);
+            this.OpenPortForwardbutton.Size = new System.Drawing.Size(153, 40);
             this.OpenPortForwardbutton.TabIndex = 6;
             this.OpenPortForwardbutton.Text = "Open Port Forward";
             this.OpenPortForwardbutton.UseVisualStyleBackColor = true;
@@ -143,10 +179,9 @@
             this.Servercfgbutton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(7)))), ((int)(((byte)(7)))));
             this.Servercfgbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Servercfgbutton.ForeColor = System.Drawing.Color.White;
-            this.Servercfgbutton.Location = new System.Drawing.Point(114, 166);
-            this.Servercfgbutton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Servercfgbutton.Location = new System.Drawing.Point(171, 255);
             this.Servercfgbutton.Name = "Servercfgbutton";
-            this.Servercfgbutton.Size = new System.Drawing.Size(102, 26);
+            this.Servercfgbutton.Size = new System.Drawing.Size(153, 40);
             this.Servercfgbutton.TabIndex = 7;
             this.Servercfgbutton.Text = "Open server.cfg";
             this.Servercfgbutton.UseVisualStyleBackColor = true;
@@ -157,10 +192,9 @@
             this.Adminsbutton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(7)))), ((int)(((byte)(7)))));
             this.Adminsbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Adminsbutton.ForeColor = System.Drawing.Color.White;
-            this.Adminsbutton.Location = new System.Drawing.Point(8, 196);
-            this.Adminsbutton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Adminsbutton.Location = new System.Drawing.Point(12, 302);
             this.Adminsbutton.Name = "Adminsbutton";
-            this.Adminsbutton.Size = new System.Drawing.Size(102, 26);
+            this.Adminsbutton.Size = new System.Drawing.Size(153, 40);
             this.Adminsbutton.TabIndex = 8;
             this.Adminsbutton.Text = "Open admins.txt";
             this.Adminsbutton.UseVisualStyleBackColor = true;
@@ -171,10 +205,9 @@
             this.Groupsbutton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(7)))), ((int)(((byte)(7)))));
             this.Groupsbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Groupsbutton.ForeColor = System.Drawing.Color.White;
-            this.Groupsbutton.Location = new System.Drawing.Point(114, 196);
-            this.Groupsbutton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Groupsbutton.Location = new System.Drawing.Point(171, 302);
             this.Groupsbutton.Name = "Groupsbutton";
-            this.Groupsbutton.Size = new System.Drawing.Size(102, 26);
+            this.Groupsbutton.Size = new System.Drawing.Size(153, 40);
             this.Groupsbutton.TabIndex = 9;
             this.Groupsbutton.Text = "Open groups.txt";
             this.Groupsbutton.UseVisualStyleBackColor = true;
@@ -182,10 +215,10 @@
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
-            this.ClientSize = new System.Drawing.Size(533, 292);
+            this.ClientSize = new System.Drawing.Size(800, 449);
             this.Controls.Add(this.Groupsbutton);
             this.Controls.Add(this.Adminsbutton);
             this.Controls.Add(this.Servercfgbutton);
@@ -198,11 +231,11 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ZPS Server Manager";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -224,6 +257,10 @@
         private System.Windows.Forms.Button Adminsbutton;
         private System.Windows.Forms.Button Groupsbutton;
         private System.Windows.Forms.ToolStripMenuItem readMeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem logFilesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem showLogFilesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem viewCurrentLogToolStripMenuItem;
     }
 }
 
