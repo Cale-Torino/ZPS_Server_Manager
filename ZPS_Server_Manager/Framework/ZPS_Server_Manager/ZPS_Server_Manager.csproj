@@ -88,6 +88,12 @@
     <Compile Include="Forms\ReadmeForm.Designer.cs">
       <DependentUpon>ReadmeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ShowLogsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ShowLogsForm.Designer.cs">
+      <DependentUpon>ShowLogsForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Forms\AboutForm.resx">
       <DependentUpon>AboutForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -109,6 +115,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ReadmeForm.resx">
       <DependentUpon>ReadmeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ShowLogsForm.resx">
+      <DependentUpon>ShowLogsForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.manifest" />
     <None Include="Cursor\Wo.ani">
