@@ -10,7 +10,7 @@ namespace ZPS_Server_Manager.Classes
     public class BassClass : IDisposable
     {
 
-        private const string BASS_lib = "Libs\\bass.dll";
+        private const string BASS_lib = @"Libs\bass.dll";
         [DllImport(BASS_lib, CallingConvention = CallingConvention.StdCall)]
         //
         // Summary:

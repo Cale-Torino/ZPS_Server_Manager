@@ -17,7 +17,7 @@ namespace ZPS_Server_Manager.Classes
             {
                 runProg.StartInfo.FileName = pathToFile;
                 runProg.StartInfo.CreateNoWindow = false;
-                runProg.StartInfo.WorkingDirectory = $@"{Properties.Settings.Default.SteamCMDPath}";
+                runProg.StartInfo.WorkingDirectory = $"{Properties.Settings.Default.SteamCMDPath}";
                 //runProg.StartInfo.Verb = "runas";
                 runProg.Start();
                 runProg.WaitForExit();

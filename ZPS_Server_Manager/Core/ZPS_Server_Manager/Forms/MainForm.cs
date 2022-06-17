@@ -17,7 +17,7 @@ namespace ZPS_Server_Manager
         private void MainForm_Load(object sender, EventArgs e)
         {
             DarkTitleBarClass.UseImmersiveDarkMode(Handle, true);
-            IntPtr handle = CustomCursorClass.LoadCursorFromFile("Cursor\\Hn.cur");
+            IntPtr handle = CustomCursorClass.LoadCursorFromFile(@"Cursor\Hn.cur");
             Cursor = new Cursor(handle);
             //Load all the saved properties from the config file on app startup
             if (!string.IsNullOrWhiteSpace(Properties.Settings.Default.SteamCMDPath))
@@ -29,35 +29,28 @@ namespace ZPS_Server_Manager
             {
                 GetSteamCMDbutton.Enabled = false;
             }
-            Checkfirewalrules();
         }
         private void Downloadcomplete(object sender, AsyncCompletedEventArgs e)
         {
-            LoggerClass.WriteLine($" *** SteamCMD Download Complete [MainForm] ***");
+            LoggerClass.WriteLine(" *** SteamCMD Download Complete [MainForm] ***");
             MessageBox.Show("Download SteamCMD", "Download SteamCMD Complete", MessageBoxButtons.OK, MessageBoxIcon.Information);
             ZipFile.ExtractToDirectory($@"{Properties.Settings.Default.SteamCMDPath}\steamcmd.zip", $@"{Properties.Settings.Default.SteamCMDPath}\steamcmd");
             RunSteamCMDClass.RunExeActions();
         }
-        private void Checkfirewalrules()
-        {
-            bool tcp = PortFirewallClass.GetIsRuleActiveAsync("ZPS_TCP_Firewall_Rule");
-            bool udp = PortFirewallClass.GetIsRuleActiveAsync("ZPS_UDP_Firewall_Rule");
-            LoggerClass.WriteLine($" *** Checkfirewalrules TCP is Active?: {tcp} [MainForm] ***");
-            LoggerClass.WriteLine($" *** Checkfirewalrules UDP is Active?: {udp} [MainForm] ***");
-        }
+
         private void Addrules()
         {
             PortFirewallClass.AddTCPRule("ZPS_TCP_Firewall_Rule", "27015");
             PortFirewallClass.AddUDPRule("ZPS_UDP_Firewall_Rule", "27015");
             PortFirewallClass.GetIsRuleActiveAsync("ZPS_TCP_Firewall_Rule");
             PortFirewallClass.GetIsRuleActiveAsync("ZPS_UDP_Firewall_Rule");
-            LoggerClass.WriteLine($" *** Addrules ZPS_TCP_Firewall_Rule 27015 [MainForm] ***");
-            LoggerClass.WriteLine($" *** Addrules ZPS_UDP_Firewall_Rule 27015 [MainForm] ***");
+            LoggerClass.WriteLine(" *** Addrules ZPS_TCP_Firewall_Rule 27015 [MainForm] ***");
+            LoggerClass.WriteLine(" *** Addrules ZPS_UDP_Firewall_Rule 27015 [MainForm] ***");
         }
 
         private void SteamDirbutton_Click(object sender, EventArgs e)
         {
-            LoggerClass.WriteLine($" *** SteamDirbutton_Click [MainForm] ***");
+            LoggerClass.WriteLine(" *** SteamDirbutton_Click [MainForm] ***");
             FolderBrowserDialog f = new()
             {
                 Description = "Please select the folder where you would like to install SteamCMD"
@@ -84,20 +77,20 @@ namespace ZPS_Server_Manager
                                     wc.DownloadFileAsync(new Uri("https://steamcdn-a.akamaihd.net/client/installer/steamcmd.zip"), $@"{Properties.Settings.Default.SteamCMDPath}\steamcmd.zip");
 
                                 }*/
-                LoggerClass.WriteLine($" *** GetSteamCMDbutton_Click [MainForm] ***");
+                LoggerClass.WriteLine(" *** GetSteamCMDbutton_Click [MainForm] ***");
                 ProcessClass.RunProcess($@"{Application.StartupPath}\TextFiles\SteamCMD_Steps.txt");
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Download SteamCMD Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                LoggerClass.WriteLine(" *** Error:" + ex.Message + " [MainForm] ***");
+                LoggerClass.WriteLine($" *** Error:{ex.Message} [MainForm] ***");
                 return;
             }
         }
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            LoggerClass.WriteLine($" *** aboutToolStripMenuItem_Click [MainForm] ***");
+            LoggerClass.WriteLine(" *** aboutToolStripMenuItem_Click [MainForm] ***");
             //Open the about form
             using Form f = new AboutForm();
             f.ShowDialog();
@@ -106,7 +99,7 @@ namespace ZPS_Server_Manager
         private void readMeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //Open the readme form
-            LoggerClass.WriteLine($" *** readMeToolStripMenuItem_Click [MainForm] ***");
+            LoggerClass.WriteLine(" *** readMeToolStripMenuItem_Click [MainForm] ***");
             using Form f = new ReadmeForm();
             f.ShowDialog();
         }
@@ -117,20 +110,20 @@ namespace ZPS_Server_Manager
             //Process.Start("https://www.yougetsignal.com/tools/open-ports");
             Addrules();
             //RunProcess("WF.msc");
-            LoggerClass.WriteLine($" *** OpenPortForwardbutton_Click [MainForm] ***");
+            LoggerClass.WriteLine(" *** OpenPortForwardbutton_Click [MainForm] ***");
         }
 
         private void Groupsbutton_Click(object sender, EventArgs e)
         {
             try
             {
-                LoggerClass.WriteLine($" *** Groupsbutton_Click [MainForm] ***");
+                LoggerClass.WriteLine(" *** Groupsbutton_Click [MainForm] ***");
                 ProcessClass.RunProcess($@"{Properties.Settings.Default.SteamCMDPath}\steamcmd\zpsserver\zps\data\adminsystem\groups.txt");
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Open groups.txt Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                LoggerClass.WriteLine(" *** Error:" + ex.Message + " [MainForm] ***");
+                LoggerClass.WriteLine($" *** Error:{ex.Message} [MainForm] ***");
                 return;
             }
         }
@@ -139,13 +132,13 @@ namespace ZPS_Server_Manager
         {
             try
             {
-                LoggerClass.WriteLine($" *** Servercfgbutton_Click [MainForm] ***");
+                LoggerClass.WriteLine(" *** Servercfgbutton_Click [MainForm] ***");
                 ProcessClass.RunProcess($@"{Properties.Settings.Default.SteamCMDPath}\steamcmd\zpsserver\zps\cfg\server.cfg");
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Open server.cfg Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                LoggerClass.WriteLine(" *** Error:" + ex.Message + " [MainForm] ***");
+                LoggerClass.WriteLine($" *** Error:{ex.Message} [MainForm] ***");
                 return;
             }
         }
@@ -154,15 +147,31 @@ namespace ZPS_Server_Manager
         {
             try
             {
-                LoggerClass.WriteLine($" *** Adminsbutton_Click [MainForm] ***");
+                LoggerClass.WriteLine(" *** Adminsbutton_Click [MainForm] ***");
                 ProcessClass.RunProcess($@"{Properties.Settings.Default.SteamCMDPath}\steamcmd\zpsserver\zps\data\adminsystem\admins.txt");
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Open admins.txt Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                LoggerClass.WriteLine(" *** Error:" + ex.Message + " [MainForm] ***");
+                LoggerClass.WriteLine($" *** Error:{ex.Message} [MainForm] ***");
                 return;
             }
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Console.Beep();
+        }
+
+        private void openLogsFolderToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ProcessClass.RunProcess($@"{AppDomain.CurrentDomain.BaseDirectory}\Logs\");
+        }
+
+        private void viewCurrentLogToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using var f = new ShowLogsForm();
+            f.ShowDialog();
         }
     }
 }

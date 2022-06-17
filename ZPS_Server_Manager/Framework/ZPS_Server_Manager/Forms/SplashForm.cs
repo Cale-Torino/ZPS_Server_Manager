@@ -24,11 +24,11 @@ namespace ZPS_Server_Manager
         Timer myTimer = new Timer();
         private void PlaySound()
         {
-            LoggerClass.WriteLine($" *** PlaySound [SplashForm] ***");
+            LoggerClass.WriteLine(" *** PlaySound [SplashForm] ***");
             try
             {
                 BassClass.BASS_Init(-1, 44100, DeviceInitFlagsClass.DeviceInitFlags.Default, IntPtr.Zero);
-                _handel = BassClass.BASS_StreamCreateFile(false, "Music\\theme.mp3", 0L, 0L, BassFlagsClass.BassFlags.Default);
+                _handel = BassClass.BASS_StreamCreateFile(false, @"Music\theme.mp3", 0L, 0L, BassFlagsClass.BassFlags.Default);
                 BassClass.BASS_ChannelPlay(_handel, false);
             }
             catch (Exception ex)
@@ -61,8 +61,8 @@ namespace ZPS_Server_Manager
             PlaySound();
             LoggerClass.WriteLine(GetSpecsClass.GetSpecs());
             Checkfirewalrules();
-            pictureBox.Cursor = new Cursor(CustomCursorClass.LoadCursorFromFile("Cursor\\Wo.ani"));
-            label2.Text = "Version: " + Application.ProductVersion;//Get version from AssemblyInfo.cs [assembly: AssemblyFileVersion("1.0.1")]
+            pictureBox.Cursor = new Cursor(CustomCursorClass.LoadCursorFromFile(@"Cursor\Wo.ani"));
+            label2.Text = $"Version: {Application.ProductVersion}";//Get version from AssemblyInfo.cs [assembly: AssemblyFileVersion("1.0.1")]
 
             myTimer.Elapsed += new ElapsedEventHandler(TimeUp);
             myTimer.Interval = 6000;
@@ -80,15 +80,14 @@ namespace ZPS_Server_Manager
             try
             {
                 //Create the folders used by the app
-                string path = Application.StartupPath;
-                Directory.CreateDirectory(path + @"\Logs");
+                Directory.CreateDirectory(Application.StartupPath + @"\Logs");
                 LoggerClass.WriteLine(" *** Application Start [SplashForm] ***");
                 LoggerClass.WriteLine(" *** CreateDirectory Success [SplashForm] ***");
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Create Folder Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                LoggerClass.WriteLine(" *** Error:" + ex.Message + " [SplashForm] ***");
+                LoggerClass.WriteLine($" *** Error:{ex.Message} [SplashForm] ***");
                 return;
             }
         }

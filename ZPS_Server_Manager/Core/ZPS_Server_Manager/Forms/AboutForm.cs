@@ -21,12 +21,12 @@ namespace ZPS_Server_Manager
         }
         private void PlaySound()
         {
-            LoggerClass.WriteLine($" *** PlaySound [AboutForm] ***");
+            LoggerClass.WriteLine(" *** PlaySound [AboutForm] ***");
             try
             {
                 BassClass.BASS_Init(-1, 44100, DeviceInitFlagsClass.DeviceInitFlags.Default, IntPtr.Zero);
                 //BassClass.BASS_Init();
-                _handel = BassClass.BASS_StreamCreateFile(false, "Music\\menu.mp3", 0L, 0L, BassFlagsClass.BassFlags.Loop);
+                _handel = BassClass.BASS_StreamCreateFile(false, @"Music\menu.mp3", 0L, 0L, BassFlagsClass.BassFlags.Loop);
                 BassClass.BASS_ChannelPlay(_handel, true);
             }
             catch (Exception ex)
@@ -54,10 +54,10 @@ namespace ZPS_Server_Manager
         private void AboutForm_Load(object sender, EventArgs e)
         {
             DarkTitleBarClass.UseImmersiveDarkMode(Handle, true);
-            pictureBox.Cursor = new Cursor(CustomCursorClass.LoadCursorFromFile("Cursor\\Wo.ani"));
-            IntPtr handle = CustomCursorClass.LoadCursorFromFile("Cursor\\Hn.cur");
+            pictureBox.Cursor = new Cursor(CustomCursorClass.LoadCursorFromFile(@"Cursor\Wo.ani"));
+            IntPtr handle = CustomCursorClass.LoadCursorFromFile(@"Cursor\Hn.cur");
             Cursor = new Cursor(handle);
-            label2.Text = "Version: " + Application.ProductVersion;
+            label2.Text = $"Version: {Application.ProductVersion}";
         }
 
         private void AboutForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -76,14 +76,14 @@ namespace ZPS_Server_Manager
 
         private void label1_MouseEnter(object sender, EventArgs e)
         {
-            IntPtr handle = CustomCursorClass.LoadCursorFromFile("Cursor\\Hl.cur");
+            IntPtr handle = CustomCursorClass.LoadCursorFromFile(@"Cursor\Hl.cur");
             Cursor = new Cursor(handle);
             label1.ForeColor = Color.DodgerBlue;
         }
 
         private void label1_MouseLeave(object sender, EventArgs e)
         {
-            IntPtr handle = CustomCursorClass.LoadCursorFromFile("Cursor\\Hn.cur");
+            IntPtr handle = CustomCursorClass.LoadCursorFromFile(@"Cursor\Hn.cur");
             Cursor = new Cursor(handle);
             label1.ForeColor = Color.RoyalBlue;
         }

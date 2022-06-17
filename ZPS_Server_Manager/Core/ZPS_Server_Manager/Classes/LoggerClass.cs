@@ -10,14 +10,14 @@ namespace ZPS_Server_Manager.Classes
     {
 
         //Create logfile log. file
-        private static readonly string LogFile = AppDomain.CurrentDomain.BaseDirectory + @"Logs\" + AppDomain.CurrentDomain.FriendlyName + "_" + DateTime.Now.ToString("yyyy-dd-M--HH-mm-ss") + ".log";
+        internal static string LogFile { get; set; } = $@"{AppDomain.CurrentDomain.BaseDirectory}Logs\{AppDomain.CurrentDomain.FriendlyName}_{DateTime.Now:yyyy-dd-M--HH-mm-ss}.log";
 
-        public static void WriteLine(string txt)
+        internal static void WriteLine(string txt)
         {
             try
             {
                 //Write to the logfile
-                File.AppendAllText(LogFile, "[" + DateTime.Now.ToString() + "] : " + txt + "\n");
+                File.AppendAllText(LogFile, $"[{DateTime.Now}] : {txt}\n");
             }
             catch (Exception ex)
             {
@@ -26,7 +26,7 @@ namespace ZPS_Server_Manager.Classes
             }
         }
 
-        public static void DeleteLog()
+        internal static void DeleteLog()
         {
             try
             {

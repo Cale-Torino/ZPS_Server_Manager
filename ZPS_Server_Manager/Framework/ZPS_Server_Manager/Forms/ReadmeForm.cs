@@ -21,13 +21,13 @@ namespace ZPS_Server_Manager
         private void ReadmeForm_Load(object sender, EventArgs e)
         {
             DarkTitleBarClass.UseImmersiveDarkMode(Handle, true);
-            Cursor = new Cursor(CustomCursorClass.LoadCursorFromFile("Cursor\\Hn.cur"));
+            Cursor = new Cursor(CustomCursorClass.LoadCursorFromFile(@"Cursor\Hn.cur"));
             LoggerClass.WriteLine(" *** Readme Form Show Success [ReadmeForm] *** ");
             try
             {
                 //Clear Richtextbox and add the content of ReadMe.txt
                 richTextBox.Clear();
-                using (var sr = new StreamReader("TextFiles\\Readme.txt"))
+                using (var sr = new StreamReader(@"TextFiles\Readme.txt"))
                 {
                     richTextBox.Text = sr.ReadToEnd();
                 }

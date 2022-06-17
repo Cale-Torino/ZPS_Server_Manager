@@ -1,8 +1,7 @@
-﻿using System;
-using System.Reflection;
+﻿using System.Reflection;
 using System.Text;
 
-namespace ZPS_Server_Manager
+namespace ZPS_Server_Manager.Classes
 {
     internal class GetSpecsClass
     {

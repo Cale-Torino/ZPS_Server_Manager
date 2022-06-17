@@ -40,6 +40,10 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.readMeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.logFilesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openLogsFolderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewCurrentLogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -140,7 +144,8 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aboutToolStripMenuItem,
-            this.readMeToolStripMenuItem});
+            this.readMeToolStripMenuItem,
+            this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 33);
@@ -162,6 +167,44 @@
             this.readMeToolStripMenuItem.Size = new System.Drawing.Size(92, 29);
             this.readMeToolStripMenuItem.Text = "ReadMe";
             this.readMeToolStripMenuItem.Click += new System.EventHandler(this.readMeToolStripMenuItem_Click);
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.logFilesToolStripMenuItem});
+            this.helpToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(65, 29);
+            this.helpToolStripMenuItem.Text = "Help";
+            // 
+            // logFilesToolStripMenuItem
+            // 
+            this.logFilesToolStripMenuItem.BackColor = System.Drawing.Color.Black;
+            this.logFilesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.openLogsFolderToolStripMenuItem,
+            this.viewCurrentLogToolStripMenuItem});
+            this.logFilesToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.logFilesToolStripMenuItem.Name = "logFilesToolStripMenuItem";
+            this.logFilesToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.logFilesToolStripMenuItem.Text = "Log Files";
+            // 
+            // openLogsFolderToolStripMenuItem
+            // 
+            this.openLogsFolderToolStripMenuItem.BackColor = System.Drawing.Color.Black;
+            this.openLogsFolderToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.openLogsFolderToolStripMenuItem.Name = "openLogsFolderToolStripMenuItem";
+            this.openLogsFolderToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.openLogsFolderToolStripMenuItem.Text = "Open Logs Folder";
+            this.openLogsFolderToolStripMenuItem.Click += new System.EventHandler(this.openLogsFolderToolStripMenuItem_Click);
+            // 
+            // viewCurrentLogToolStripMenuItem
+            // 
+            this.viewCurrentLogToolStripMenuItem.BackColor = System.Drawing.Color.Black;
+            this.viewCurrentLogToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.viewCurrentLogToolStripMenuItem.Name = "viewCurrentLogToolStripMenuItem";
+            this.viewCurrentLogToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.viewCurrentLogToolStripMenuItem.Text = "View Current Log";
+            this.viewCurrentLogToolStripMenuItem.Click += new System.EventHandler(this.viewCurrentLogToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -185,6 +228,7 @@
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -206,5 +250,9 @@
         private MenuStrip menuStrip1;
         private ToolStripMenuItem aboutToolStripMenuItem;
         private ToolStripMenuItem readMeToolStripMenuItem;
+        private ToolStripMenuItem helpToolStripMenuItem;
+        private ToolStripMenuItem logFilesToolStripMenuItem;
+        private ToolStripMenuItem openLogsFolderToolStripMenuItem;
+        private ToolStripMenuItem viewCurrentLogToolStripMenuItem;
     }
 }
