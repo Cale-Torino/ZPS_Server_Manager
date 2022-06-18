@@ -34,10 +34,11 @@ namespace ZPS_Server_Manager
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //TrySetCursorsDotHandToSystemHandCursor();
-            Thread t = new Thread(new ThreadStart(DoSplash));// Point to method
-            t.Start();// Start splash thread
-            Thread.Sleep(6000);// 6 seconds
-            Application.Run(new MainForm());
+            //Thread t = new Thread(new ThreadStart(DoSplash));// Point to method
+            //t.Start();// Start splash thread
+            //Thread.Sleep(6000);// 6 seconds
+            //Application.Run(new MainForm());
+            Application.Run(new SplashForm());
         }
         private static void DoSplash()
         {

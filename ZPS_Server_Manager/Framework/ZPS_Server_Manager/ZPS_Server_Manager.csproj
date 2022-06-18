@@ -58,6 +58,12 @@
     <Compile Include="Classes\DeviceInitFlagsClass.cs" />
     <Compile Include="Classes\CustomCursorClass.cs" />
     <Compile Include="Classes\DarkTitleBarClass.cs" />
+    <Compile Include="Forms\EasterEggForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EasterEggForm.Designer.cs">
+      <DependentUpon>EasterEggForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\AboutForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +101,9 @@
     <Compile Include="Forms\ShowLogsForm.Designer.cs">
       <DependentUpon>ShowLogsForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Forms\EasterEggForm.resx">
+      <DependentUpon>EasterEggForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\AboutForm.resx">
       <DependentUpon>AboutForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -148,6 +157,10 @@
     <Content Include="Libs\bass.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Music\01. Espiritual Gambler - Bungholio! feat. Cornholio %28Original Mix%29.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Music\Bungholio.mp3" />
     <Content Include="Music\menu.mp3">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

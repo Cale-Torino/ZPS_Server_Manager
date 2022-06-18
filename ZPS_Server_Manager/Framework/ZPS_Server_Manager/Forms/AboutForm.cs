@@ -16,8 +16,7 @@ namespace ZPS_Server_Manager
         private int _handel;
         public AboutForm()
         {
-            InitializeComponent();
-            PlaySound();
+            InitializeComponent();          
         }
         private void PlaySound()
         {
@@ -52,6 +51,7 @@ namespace ZPS_Server_Manager
         }
         private void AboutForm_Load(object sender, EventArgs e)
         {
+            PlaySound();
             DarkTitleBarClass.UseImmersiveDarkMode(Handle, true);
             pictureBox.Cursor = new Cursor(CustomCursorClass.LoadCursorFromFile(@"Cursor\Wo.ani"));
             IntPtr handle = CustomCursorClass.LoadCursorFromFile(@"Cursor\Hn.cur");
@@ -62,11 +62,6 @@ namespace ZPS_Server_Manager
         private void AboutForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             StopSound();
-        }
-
-        private void linkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -82,6 +77,39 @@ namespace ZPS_Server_Manager
         }
 
         private void label1_MouseLeave(object sender, EventArgs e)
+        {
+            IntPtr handle = CustomCursorClass.LoadCursorFromFile(@"Cursor\Hn.cur");
+            Cursor = new Cursor(handle);
+        }
+        private int count = 0;
+        private void label_Click(object sender, EventArgs e)
+        {
+            MouseEventArgs me = (MouseEventArgs)e;
+            if (me.Button == MouseButtons.Left)
+            {
+                count++;
+                if (count == 5)
+                {
+                    //Easter egg
+                    count = 0;
+                    StopSound();
+                    LoggerClass.WriteLine(" *** EasterEgg_Activated [AboutForm] ***");
+                    //Open the about form
+                    using (Form f = new EasterEggForm())
+                    {
+                        f.ShowDialog();
+                    }
+                }
+            }
+        }
+
+        private void label_MouseEnter(object sender, EventArgs e)
+        {
+            IntPtr handle = CustomCursorClass.LoadCursorFromFile(@"Cursor\Hl.cur");
+            Cursor = new Cursor(handle);
+        }
+
+        private void label_MouseLeave(object sender, EventArgs e)
         {
             IntPtr handle = CustomCursorClass.LoadCursorFromFile(@"Cursor\Hn.cur");
             Cursor = new Cursor(handle);

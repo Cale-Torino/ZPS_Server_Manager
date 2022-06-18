@@ -73,6 +73,9 @@
             this.label.Size = new System.Drawing.Size(67, 20);
             this.label.TabIndex = 1;
             this.label.Text = "Version:";
+            this.label.Click += new System.EventHandler(this.label_Click);
+            this.label.MouseEnter += new System.EventHandler(this.label_MouseEnter);
+            this.label.MouseLeave += new System.EventHandler(this.label_MouseLeave);
             // 
             // pictureBox
             // 

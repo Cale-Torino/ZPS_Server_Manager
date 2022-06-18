@@ -96,8 +96,14 @@ namespace ZPS_Server_Manager
             Invoke((MethodInvoker)delegate
             {
                 StopSound();
-                Close();
                 myTimer.Stop();
+                Hide();
+                using (Form f = new MainForm())
+                {
+                    f.ShowDialog();
+                    f.Activate();
+                }
+                Close();
             });
         }
 
