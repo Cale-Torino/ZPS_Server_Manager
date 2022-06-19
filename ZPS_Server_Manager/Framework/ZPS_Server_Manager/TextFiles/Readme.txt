@@ -1,6 +1,22 @@
 ﻿APPLICATION CREATED BY CA TORINO 2022
 
 -------------------------------------
+## Version: 1.0.0
+## Date: 06-19-2022
+## Author: C.A Torino
+-------------------------------------
+
+Added transparent blur class
+Added easter egg
+Added mp3 capability
+Added bass.dll
+Added Darkmode title bar
+Added dark mode explorer controls
+Added Logs
+Added custom cursor and animated cursor
+
+
+-------------------------------------
 ## MUSIC
 -------------------------------------
 

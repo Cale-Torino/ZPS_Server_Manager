@@ -178,6 +178,15 @@ namespace ZPS_Server_Manager
         {
             using (var f = new ShowLogsForm())
             {
+                //AllowDarkModeForWindow
+                //DarkMode_Explorer
+                //Explorer
+                //AllowDarkModeForApp
+                //AllowDarkModeForWindow
+                //https://stackoverflow.com/questions/3524754/scrollbar-flicker-when-calling-enablescrollbar
+                CompositionAttributeClass.EnableBlur(f.Handle);
+                //DarkTitleBarClass.SetWindowTheme(f.Handle, "Explorer", null);
+                DarkTitleBarClass.UseImmersiveDarkMode(f.Handle, true);
                 f.ShowDialog();
             }
         }

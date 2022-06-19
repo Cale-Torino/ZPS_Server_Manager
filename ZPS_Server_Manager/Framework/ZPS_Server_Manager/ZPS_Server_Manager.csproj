@@ -58,6 +58,7 @@
     <Compile Include="Classes\DeviceInitFlagsClass.cs" />
     <Compile Include="Classes\CustomCursorClass.cs" />
     <Compile Include="Classes\DarkTitleBarClass.cs" />
+    <Compile Include="Classes\CompositionAttributeClass.cs" />
     <Compile Include="Forms\EasterEggForm.cs">
       <SubType>Form</SubType>
     </Compile>

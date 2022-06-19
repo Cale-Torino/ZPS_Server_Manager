@@ -20,7 +20,6 @@ namespace ZPS_Server_Manager
 
         private void ReadmeForm_Load(object sender, EventArgs e)
         {
-            DarkTitleBarClass.UseImmersiveDarkMode(Handle, true);
             Cursor = new Cursor(CustomCursorClass.LoadCursorFromFile(@"Cursor\Hn.cur"));
             LoggerClass.WriteLine(" *** Readme Form Show Success [ReadmeForm] *** ");
             try
@@ -31,7 +30,8 @@ namespace ZPS_Server_Manager
                 {
                     richTextBox.Text = sr.ReadToEnd();
                 }
-
+                DarkTitleBarClass.SetWindowTheme(richTextBox.Handle, "DarkMode_Explorer", null);
+                DarkTitleBarClass.UseImmersiveDarkMode(Handle, true);
             }
             catch (Exception ex)
             {
