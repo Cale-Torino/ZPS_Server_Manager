@@ -6,9 +6,9 @@ namespace ZPS_Server_Manager
     internal class DarkTitleBarClass
     {
         [DllImport("dwmapi.dll", CallingConvention = CallingConvention.StdCall)]
-        private static extern int DwmSetWindowAttribute(IntPtr hwnd, int attr, ref int attrValue, int attrSize);
+        internal static extern int DwmSetWindowAttribute(IntPtr hwnd, int attr, ref int attrValue, int attrSize);
         [DllImport("uxtheme.dll", SetLastError = true, ExactSpelling = true, CharSet = CharSet.Unicode)]
-        public static extern int SetWindowTheme(IntPtr hWnd, string pszSubAppName, string pszSubIdList);
+        internal static extern int SetWindowTheme(IntPtr hWnd, string pszSubAppName, string pszSubIdList);
 
         private const int DWMWA_USE_IMMERSIVE_DARK_MODE_BEFORE_20H1 = 19;
         private const int DWMWA_USE_IMMERSIVE_DARK_MODE = 20;
@@ -30,7 +30,7 @@ namespace ZPS_Server_Manager
             return false;
         }
 
-        private static bool IsWindows10OrGreater(int build = -1)
+        internal static bool IsWindows10OrGreater(int build = -1)
         {
             return Environment.OSVersion.Version.Major >= 10 && Environment.OSVersion.Version.Build >= build;
         }

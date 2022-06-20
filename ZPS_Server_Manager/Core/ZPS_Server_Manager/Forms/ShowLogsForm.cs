@@ -35,11 +35,13 @@ namespace ZPS_Server_Manager
 
             richTextBox.Clear();
             // Open the text file using a stream reader.
-            using (StreamReader sr = new StreamReader(LoggerClass.LogFile))
+            using (StreamReader sr = new(LoggerClass.LogFile))
             {
                 richTextBox.Text = sr.ReadToEnd();
             }
-            DarkTitleBarClass.UseImmersiveDarkMode(richTextBox.Handle, true);
+            CompositionAttributeClass.EnableBlur(Handle);
+            int settheme = DarkTitleBarClass.SetWindowTheme(richTextBox.Handle, "DarkMode_Explorer", null);
+            MessageBox.Show(settheme.ToString());
         }
     }
 }

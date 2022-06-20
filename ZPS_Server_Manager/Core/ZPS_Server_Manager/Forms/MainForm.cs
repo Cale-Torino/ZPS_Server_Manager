@@ -171,6 +171,7 @@ namespace ZPS_Server_Manager
         private void viewCurrentLogToolStripMenuItem_Click(object sender, EventArgs e)
         {
             using var f = new ShowLogsForm();
+            DarkTitleBarClass.UseImmersiveDarkMode(f.Handle, true);
             f.ShowDialog();
         }
     }
