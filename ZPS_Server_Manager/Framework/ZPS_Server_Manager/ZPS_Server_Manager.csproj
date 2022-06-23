@@ -158,10 +158,8 @@
     <Content Include="Libs\bass.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Music\01. Espiritual Gambler - Bungholio! feat. Cornholio %28Original Mix%29.mp3">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="Music\Bungholio.mp3" />
+    <Content Include="Music\espcornholio.mp3" />
     <Content Include="Music\menu.mp3">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

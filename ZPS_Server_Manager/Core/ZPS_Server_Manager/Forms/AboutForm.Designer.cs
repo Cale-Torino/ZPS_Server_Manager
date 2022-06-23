@@ -56,6 +56,9 @@
             this.label2.Size = new System.Drawing.Size(74, 25);
             this.label2.TabIndex = 1;
             this.label2.Text = "Version:";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            this.label2.MouseEnter += new System.EventHandler(this.label2_MouseEnter);
+            this.label2.MouseLeave += new System.EventHandler(this.label2_MouseLeave);
             // 
             // label1
             // 

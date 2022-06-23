@@ -65,6 +65,9 @@
     <None Update="Libs\bass.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Music\espcornholio.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Music\menu.mp3">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

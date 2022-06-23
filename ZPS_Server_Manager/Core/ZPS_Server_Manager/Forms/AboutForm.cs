@@ -87,5 +87,38 @@ namespace ZPS_Server_Manager
             Cursor = new Cursor(handle);
             label1.ForeColor = Color.RoyalBlue;
         }
+        private int count = 0;
+        private void label2_Click(object sender, EventArgs e)
+        {
+            MouseEventArgs me = (MouseEventArgs)e;
+            if (me.Button == MouseButtons.Left)
+            {
+                count++;
+                if (count == 5)
+                {
+                    //Easter egg
+                    count = 0;
+                    StopSound();
+                    LoggerClass.WriteLine(" *** EasterEgg_Activated [AboutForm] ***");
+                    //Open the about form
+                    using (Form f = new EasterEggForm())
+                    {
+                        f.ShowDialog();
+                    }
+                }
+            }
+        }
+
+        private void label2_MouseEnter(object sender, EventArgs e)
+        {
+            IntPtr handle = CustomCursorClass.LoadCursorFromFile(@"Cursor\Hl.cur");
+            Cursor = new Cursor(handle);
+        }
+
+        private void label2_MouseLeave(object sender, EventArgs e)
+        {
+            IntPtr handle = CustomCursorClass.LoadCursorFromFile(@"Cursor\Hn.cur");
+            Cursor = new Cursor(handle);
+        }
     }
 }

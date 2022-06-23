@@ -28,7 +28,7 @@ namespace ZPS_Server_Manager
             try
             {
                 BassClass.BASS_Init(-1, 44100, DeviceInitFlagsClass.DeviceInitFlags.Default, IntPtr.Zero);
-                _handel = BassClass.BASS_StreamCreateFile(false, @"Music\01. Espiritual Gambler - Bungholio! feat. Cornholio (Original Mix).mp3", 0L, 0L, BassFlagsClass.BassFlags.Loop);
+                _handel = BassClass.BASS_StreamCreateFile(false, @"Music\espcornholio.mp3", 0L, 0L, BassFlagsClass.BassFlags.Loop);
                 BassClass.BASS_ChannelPlay(_handel, true);
             }
             catch (Exception ex)
