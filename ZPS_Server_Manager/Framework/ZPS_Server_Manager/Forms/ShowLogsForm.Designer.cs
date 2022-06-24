@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ShowLogsForm));
             this.richTextBox = new System.Windows.Forms.RichTextBox();
             this.OpenFilebutton = new System.Windows.Forms.Button();
             this.Closebutton = new System.Windows.Forms.Button();
@@ -82,6 +83,7 @@
             this.Controls.Add(this.richTextBox);
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ShowLogsForm";

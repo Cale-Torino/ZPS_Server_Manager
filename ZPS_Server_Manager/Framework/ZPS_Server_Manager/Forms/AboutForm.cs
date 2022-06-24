@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ZPS_Server_Manager
@@ -74,12 +67,14 @@ namespace ZPS_Server_Manager
         {
             IntPtr handle = CustomCursorClass.LoadCursorFromFile(@"Cursor\Hl.cur");
             Cursor = new Cursor(handle);
+            label1.ForeColor = Color.DodgerBlue;
         }
 
         private void label1_MouseLeave(object sender, EventArgs e)
         {
             IntPtr handle = CustomCursorClass.LoadCursorFromFile(@"Cursor\Hn.cur");
             Cursor = new Cursor(handle);
+            label1.ForeColor = Color.RoyalBlue;
         }
         private int count = 0;
         private void label_Click(object sender, EventArgs e)
@@ -105,12 +100,14 @@ namespace ZPS_Server_Manager
 
         private void label_MouseEnter(object sender, EventArgs e)
         {
+            label.ForeColor = Color.DodgerBlue;
             IntPtr handle = CustomCursorClass.LoadCursorFromFile(@"Cursor\Hl.cur");
             Cursor = new Cursor(handle);
         }
 
         private void label_MouseLeave(object sender, EventArgs e)
         {
+            label.ForeColor = Color.White;
             IntPtr handle = CustomCursorClass.LoadCursorFromFile(@"Cursor\Hn.cur");
             Cursor = new Cursor(handle);
         }
