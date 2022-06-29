@@ -39,6 +39,7 @@ namespace ZPS_Server_Manager
         }
         private void StopSound()
         {
+            LoggerClass.WriteLine(" *** StopSound [SplashForm] ***");
             try
             {
                 //BASSMODClass.BASSMOD_Free();
@@ -94,10 +95,11 @@ namespace ZPS_Server_Manager
         }
         public void TimeUp(object sender, ElapsedEventArgs e)
         {
+            LoggerClass.WriteLine(" *** TimeUp [SplashForm] ***");
+            StopSound();
+            myTimer.Stop();
             Invoke((MethodInvoker)delegate
             {
-                StopSound();
-                myTimer.Stop();
                 Hide();
                 using (Form f = new MainForm())
                 {

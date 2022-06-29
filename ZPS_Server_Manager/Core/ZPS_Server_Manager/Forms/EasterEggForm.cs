@@ -26,7 +26,7 @@ namespace ZPS_Server_Manager
         }
         private void PlaySound()
         {
-            LoggerClass.WriteLine(" *** PlaySound [AboutForm] ***");
+            LoggerClass.WriteLine(" *** PlaySound [EasterEggForm] ***");
             try
             {
                 BassClass.BASS_Init(-1, 44100, DeviceInitFlagsClass.DeviceInitFlags.Default, IntPtr.Zero);
@@ -41,6 +41,7 @@ namespace ZPS_Server_Manager
         }
         private void StopSound()
         {
+            LoggerClass.WriteLine(" *** StopSound [EasterEggForm] ***");
             try
             {
                 // free the stream 
@@ -59,6 +60,7 @@ namespace ZPS_Server_Manager
 
         private void pictureBox_Click(object sender, EventArgs e)
         {
+            LoggerClass.WriteLine(" *** Close_easter_egg [EasterEggForm] ***");
             MouseEventArgs me = (MouseEventArgs)e;
             if (me.Button == MouseButtons.Left)
             {

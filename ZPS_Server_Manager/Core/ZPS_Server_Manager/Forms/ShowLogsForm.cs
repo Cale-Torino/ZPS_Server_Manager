@@ -22,16 +22,19 @@ namespace ZPS_Server_Manager
 
         private void OpenFilebutton_Click(object sender, EventArgs e)
         {
+            LoggerClass.WriteLine(" *** OpenFilebutton_Click [ShowLogsForm] *** ");
             ProcessClass.RunProcess(LoggerClass.LogFile);
         }
 
         private void Closebutton_Click(object sender, EventArgs e)
         {
+            LoggerClass.WriteLine(" *** Closebutton_Click [ShowLogsForm] *** ");
             Close();
         }
 
         private void ShowLogsForm_Load(object sender, EventArgs e)
         {
+            LoggerClass.WriteLine(" *** ShowLogsForm_Load [ShowLogsForm] *** ");
             DarkTitleBarClass.UseImmersiveDarkMode(Handle, true);
             //Clear Richtextbox and add the content of ReadMe.txt
 

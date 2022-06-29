@@ -97,13 +97,15 @@ namespace ZPS_Server_Manager
         }
         public void TimeUp(object? sender, ElapsedEventArgs e)
         {
+            LoggerClass.WriteLine(" *** TimeUp [SplashForm] ***");
+            StopSound();
+            myTimer.Stop();
             Invoke((MethodInvoker)delegate
             {
-                StopSound();
-                myTimer.Stop();
                 Hide();
                 using Form f = new MainForm("test");
                 f.ShowDialog();
+                f.Activate();
                 Close();
             });
         }

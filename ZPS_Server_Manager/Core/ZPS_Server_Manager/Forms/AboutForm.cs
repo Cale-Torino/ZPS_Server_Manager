@@ -41,6 +41,7 @@ namespace ZPS_Server_Manager
         }
         private void StopSound()
         {
+            LoggerClass.WriteLine(" *** StopSound [AboutForm] ***");
             try
             {
                 // free the stream 
@@ -72,6 +73,7 @@ namespace ZPS_Server_Manager
         private void label1_Click(object sender, EventArgs e)
         {
             //Opens link to https://github.com/Cale-Torino
+            LoggerClass.WriteLine(" *** Opens link to https://github.com/Cale-Torino [AboutForm] ***");
             ProcessClass.RunProcess("https://github.com/Cale-Torino");
             //string url = "https://github.com/Cale-Torino";
             //url = url.Replace("&", "^&");

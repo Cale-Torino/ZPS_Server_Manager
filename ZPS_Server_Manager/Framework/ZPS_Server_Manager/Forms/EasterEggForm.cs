@@ -39,6 +39,7 @@ namespace ZPS_Server_Manager
         }
         private void StopSound()
         {
+            LoggerClass.WriteLine(" *** StopSound [EasterEggForm] ***");
             try
             {
                 // free the stream 
@@ -56,6 +57,7 @@ namespace ZPS_Server_Manager
         private int count = 0;
         private void pictureBox_Click(object sender, EventArgs e)
         {
+            LoggerClass.WriteLine(" *** Close_easter_egg [EasterEggForm] ***");
             MouseEventArgs me = (MouseEventArgs)e;
             if (me.Button == MouseButtons.Left)
             {
