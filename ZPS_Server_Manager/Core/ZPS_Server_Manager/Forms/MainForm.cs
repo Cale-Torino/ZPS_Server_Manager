@@ -1,4 +1,5 @@
 using System.ComponentModel;
+using System.Diagnostics;
 using System.IO.Compression;
 using System.Runtime.InteropServices;
 using ZPS_Server_Manager.Classes;
@@ -164,6 +165,8 @@ namespace ZPS_Server_Manager
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
+            TimeSpan te = DateTime.UtcNow - Process.GetCurrentProcess().StartTime.ToUniversalTime();
+            LoggerClass.WriteLine($" *** Elapsed time since start: {te} [MainForm] ***");
             Console.Beep();
         }
 
