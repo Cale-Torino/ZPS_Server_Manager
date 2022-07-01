@@ -53,6 +53,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\CheckForUpdatesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CheckForUpdatesForm.Designer.cs">
+      <DependentUpon>CheckForUpdatesForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Classes\Bass\ChannelAttributeClass.cs" />
     <Compile Include="Classes\Bass\BassClass.cs" />
     <Compile Include="Classes\Bass\BassFlagsClass.cs" />
@@ -105,6 +111,9 @@
     <Compile Include="Forms\ShowLogsForm.Designer.cs">
       <DependentUpon>ShowLogsForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Forms\CheckForUpdatesForm.resx">
+      <DependentUpon>CheckForUpdatesForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\EasterEggForm.resx">
       <DependentUpon>EasterEggForm.cs</DependentUpon>
     </EmbeddedResource>

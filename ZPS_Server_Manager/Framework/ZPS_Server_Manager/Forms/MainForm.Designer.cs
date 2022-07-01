@@ -36,6 +36,7 @@
             this.logFilesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.showLogFilesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewCurrentLogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.checkToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.GetSteamCMDbutton = new System.Windows.Forms.Button();
@@ -44,12 +45,14 @@
             this.Servercfgbutton = new System.Windows.Forms.Button();
             this.Adminsbutton = new System.Windows.Forms.Button();
             this.Groupsbutton = new System.Windows.Forms.Button();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(7)))), ((int)(((byte)(7)))));
+            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aboutToolStripMenuItem,
@@ -80,7 +83,8 @@
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.logFilesToolStripMenuItem});
+            this.logFilesToolStripMenuItem,
+            this.checkToolStripMenuItem});
             this.helpToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(65, 29);
@@ -102,7 +106,7 @@
             this.showLogFilesToolStripMenuItem.BackColor = System.Drawing.Color.Black;
             this.showLogFilesToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.showLogFilesToolStripMenuItem.Name = "showLogFilesToolStripMenuItem";
-            this.showLogFilesToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.showLogFilesToolStripMenuItem.Size = new System.Drawing.Size(256, 34);
             this.showLogFilesToolStripMenuItem.Text = "Open Logs Folder";
             this.showLogFilesToolStripMenuItem.Click += new System.EventHandler(this.showLogFilesToolStripMenuItem_Click);
             // 
@@ -111,14 +115,23 @@
             this.viewCurrentLogToolStripMenuItem.BackColor = System.Drawing.Color.Black;
             this.viewCurrentLogToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.viewCurrentLogToolStripMenuItem.Name = "viewCurrentLogToolStripMenuItem";
-            this.viewCurrentLogToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.viewCurrentLogToolStripMenuItem.Size = new System.Drawing.Size(256, 34);
             this.viewCurrentLogToolStripMenuItem.Text = "View Current Log";
             this.viewCurrentLogToolStripMenuItem.Click += new System.EventHandler(this.viewCurrentLogToolStripMenuItem_Click);
+            // 
+            // checkToolStripMenuItem
+            // 
+            this.checkToolStripMenuItem.BackColor = System.Drawing.Color.Black;
+            this.checkToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.checkToolStripMenuItem.Name = "checkToolStripMenuItem";
+            this.checkToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.checkToolStripMenuItem.Text = "Check For Updates";
+            this.checkToolStripMenuItem.Click += new System.EventHandler(this.checkToolStripMenuItem_Click);
             // 
             // groupBox1
             // 
             this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(12, 35);
+            this.groupBox1.Location = new System.Drawing.Point(12, 36);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(200, 100);
             this.groupBox1.TabIndex = 1;
@@ -261,6 +274,8 @@
         private System.Windows.Forms.ToolStripMenuItem logFilesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem showLogFilesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewCurrentLogToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem checkToolStripMenuItem;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }
 

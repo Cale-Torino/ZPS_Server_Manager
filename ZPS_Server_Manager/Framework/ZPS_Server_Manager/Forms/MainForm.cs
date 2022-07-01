@@ -197,5 +197,14 @@ namespace ZPS_Server_Manager
             LoggerClass.WriteLine($" *** Elapsed time since start: {te} [MainForm] ***");
             Console.Beep();
         }
+
+        private void checkToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (var f = new CheckForUpdatesForm())
+            {
+                DarkTitleBarClass.UseImmersiveDarkMode(f.Handle, true);
+                f.ShowDialog();
+            }
+        }
     }
 }
