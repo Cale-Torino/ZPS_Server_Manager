@@ -9,6 +9,7 @@ using System.Linq;
 using System.Net;
 using System.Reflection;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -73,9 +74,13 @@ namespace ZPS_Server_Manager
         {
             try
             {
-                WebClient wc = new WebClient();
-                wc.DownloadFileCompleted += new AsyncCompletedEventHandler(DownloadFileCallback);
-                wc.DownloadFileAsync(new Uri(strPath), @"Updates\ZPS_Server_Manager.zip");
+                Thread thread = new Thread(() => {
+                    WebClient wc = new WebClient();
+                    wc.DownloadProgressChanged += new DownloadProgressChangedEventHandler(DownloadProgressChanged);
+                    wc.DownloadFileCompleted += new AsyncCompletedEventHandler(DownloadFileCallback);
+                    wc.DownloadFileAsync(new Uri(strPath), @"Updates\ZPS_Server_Manager.zip");
+                });
+                thread.Start();
             }
             catch (Exception ex)
             {
@@ -85,11 +90,40 @@ namespace ZPS_Server_Manager
 
         }
 
+        void DownloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
+        {
+            BeginInvoke((MethodInvoker)delegate {
+                double bytesIn = double.Parse(e.BytesReceived.ToString());
+                double totalBytes = double.Parse(e.TotalBytesToReceive.ToString());
+                double percentage = bytesIn / totalBytes * 100;
+                label.Text = $"Downloaded {Math.Round(e.BytesReceived/1024.0/1024.0, 2)} MB of {Math.Round(e.TotalBytesToReceive/1024.0/1024.0, 2)} MB";
+                progressBar.Value = int.Parse(Math.Truncate(percentage).ToString());
+            });
+        }
+
         private void DownloadFileCallback(object sender, AsyncCompletedEventArgs e)
         {
-            ZipFile.ExtractToDirectory($@"{AppDomain.CurrentDomain.BaseDirectory}Updates\ZPS_Server_Manager.zip", $@"{AppDomain.CurrentDomain.BaseDirectory}");
-            ProcessClass.RunProcess("ZPS_Server_Manager.exe");
-            Close();
+            //close app at this point and run installer app or extracter bat file
+            //extract files to dir oly no folder
+            //might be easier to run zps.msi updater rather than extracting files from zip
+            //|| nMinor > nAppMinor
+            DialogResult result = MessageBox.Show($"Update Successfully downloaded\nWould you like to close the app and install the update?", "Update Runner", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+            if (result == DialogResult.Yes)
+            {
+                //code for Yes
+                //Run bat file in temp folder [deletes old app and installs newly downloaded app]
+                ZipFile.ExtractToDirectory($@"{AppDomain.CurrentDomain.BaseDirectory}Updates\ZPS_Server_Manager.zip", $@"{AppDomain.CurrentDomain.BaseDirectory}");
+                ProcessClass.RunProcess("ZPS_Server_Manager.exe");
+                Application.Exit();
+            }
+            else if (result == DialogResult.No)
+            {
+                //code for No
+                BeginInvoke((MethodInvoker)delegate {
+                    label.Text = "Download Completed";
+                });
+                //Close();
+            }
         }
 
         private void Cancelbutton_Click(object sender, EventArgs e)

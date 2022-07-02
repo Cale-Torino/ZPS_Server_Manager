@@ -39,10 +39,8 @@
             // progressBar
             // 
             this.progressBar.Location = new System.Drawing.Point(6, 25);
-            this.progressBar.MarqueeAnimationSpeed = 10;
             this.progressBar.Name = "progressBar";
             this.progressBar.Size = new System.Drawing.Size(548, 30);
-            this.progressBar.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
             this.progressBar.TabIndex = 0;
             // 
             // groupBox1
@@ -74,7 +72,7 @@
             this.Cancelbutton.Name = "Cancelbutton";
             this.Cancelbutton.Size = new System.Drawing.Size(153, 40);
             this.Cancelbutton.TabIndex = 8;
-            this.Cancelbutton.Text = "Cancel";
+            this.Cancelbutton.Text = "Close";
             this.Cancelbutton.UseVisualStyleBackColor = true;
             this.Cancelbutton.Click += new System.EventHandler(this.Cancelbutton_Click);
             // 
