@@ -74,10 +74,8 @@ namespace ZPS_Server_Manager
             try
             {
                 WebClient wc = new WebClient();
+                wc.DownloadFileCompleted += new AsyncCompletedEventHandler(DownloadFileCallback);
                 wc.DownloadFileAsync(new Uri(strPath), @"Updates\ZPS_Server_Manager.zip");
-                ZipFile.ExtractToDirectory($@"{AppDomain.CurrentDomain.BaseDirectory}Updates\ZPS_Server_Manager.zip", $@"{AppDomain.CurrentDomain.BaseDirectory}");
-                ProcessClass.RunProcess("ZPS_Server_Manager.exe");
-                Close();
             }
             catch (Exception ex)
             {
@@ -85,6 +83,13 @@ namespace ZPS_Server_Manager
                 return;
             }
 
+        }
+
+        private void DownloadFileCallback(object sender, AsyncCompletedEventArgs e)
+        {
+            ZipFile.ExtractToDirectory($@"{AppDomain.CurrentDomain.BaseDirectory}Updates\ZPS_Server_Manager.zip", $@"{AppDomain.CurrentDomain.BaseDirectory}");
+            ProcessClass.RunProcess("ZPS_Server_Manager.exe");
+            Close();
         }
 
         private void Cancelbutton_Click(object sender, EventArgs e)
