@@ -83,6 +83,7 @@ namespace ZPS_Server_Manager
             {
                 //Create the folders used by the app
                 Directory.CreateDirectory(Application.StartupPath + @"\Logs");
+                Directory.CreateDirectory(Application.StartupPath + @"\Updates");
                 LoggerClass.WriteLine(" *** Application Start [SplashForm] ***");
                 LoggerClass.WriteLine(" *** CreateDirectory Success [SplashForm] ***");
             }

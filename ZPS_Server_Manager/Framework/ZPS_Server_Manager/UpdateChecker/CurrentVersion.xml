@@ -2,8 +2,8 @@
 <ZPS_Server_Manager>
 	<currentVersion>
 		<major>1</major>
-		<minor>1</minor>
-		<build>0</build>
+		<minor>0</minor>
+		<build>1</build>
 	</currentVersion>
-	<path>https://leochapiro.de/data/TestApp.exe</path>
+	<path>https://github.com/Cale-Torino/ZPS_Server_Manager/tree/main/ZPS_Server_Manager/Framework/ZPS_Server_Manager.zip</path>
 </ZPS_Server_Manager>

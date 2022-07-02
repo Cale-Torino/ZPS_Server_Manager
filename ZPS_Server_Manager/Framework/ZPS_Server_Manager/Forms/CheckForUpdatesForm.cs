@@ -30,7 +30,7 @@ namespace ZPS_Server_Manager
         {
             try
             {
-                UpdateCheckerClass oCheckClient = new UpdateCheckerClass("http://leochapiro.de/data/CurrentVersion.xml");
+                UpdateCheckerClass oCheckClient = new UpdateCheckerClass("https://raw.githubusercontent.com/Cale-Torino/ZPS_Server_Manager/main/ZPS_Server_Manager/Framework/ZPS_Server_Manager/UpdateChecker/CurrentVersion.xml");
                 int nMajor = oCheckClient.GetVersion(enVerion.EMajor);
                 int nMinor = oCheckClient.GetVersion(enVerion.EMinor);
                 int nBuild = oCheckClient.GetVersion(enVerion.EBuild);
@@ -45,25 +45,18 @@ namespace ZPS_Server_Manager
                 int nAppMinor = fileVersionInfo.FileMinorPart;
                 int nAppBuild = fileVersionInfo.FileBuildPart;
 
-                if (nMajor > nAppMajor || nMinor > nAppMinor)
+                if (nMajor >= nAppMajor)
                 {
-                    DialogResult result = MessageBox.Show(this, "Found update:" + Environment.NewLine +
-                    "version: " + nMajor + "." + nMinor + "." + nBuild + Environment.NewLine +
-                    "path: " + strPath, "Update Checker",
-                    MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
+                    //|| nMinor > nAppMinor
+                    DialogResult result = MessageBox.Show($"Found update:\nversion: {nMajor}.{nMinor}.{nBuild}\nWould you like to download the update?" ,"Update Checker", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
                     if (result == DialogResult.Yes)
                     {
                         //code for Yes
-                        UpdateApp();
+                        UpdateApp(strPath);
                     }
                     else if (result == DialogResult.No)
                     {
                         //code for No
-                        Close();
-                    }
-                    else if (result == DialogResult.Cancel)
-                    {
-                        //code for Cancel
                         Close();
                     }
                 }
@@ -76,13 +69,13 @@ namespace ZPS_Server_Manager
 
         }
 
-        private void UpdateApp()
+        private void UpdateApp(string strPath)
         {
             try
             {
                 WebClient wc = new WebClient();
-                wc.DownloadFileAsync(new Uri("https://github.com/Cale-Torino/ZPS_Server_Manager/releases"), "ZPS_Server_Manager.zip");
-                ZipFile.ExtractToDirectory($@"{AppDomain.CurrentDomain.BaseDirectory}Updates\steamcmd.zip", $@"{AppDomain.CurrentDomain.BaseDirectory}");
+                wc.DownloadFileAsync(new Uri(strPath), @"Updates\ZPS_Server_Manager.zip");
+                ZipFile.ExtractToDirectory($@"{AppDomain.CurrentDomain.BaseDirectory}Updates\ZPS_Server_Manager.zip", $@"{AppDomain.CurrentDomain.BaseDirectory}");
                 ProcessClass.RunProcess("ZPS_Server_Manager.exe");
                 Close();
             }
