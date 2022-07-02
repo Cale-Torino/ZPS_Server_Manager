@@ -25,3 +25,12 @@ Source: https://soundcloud.com/espiritual-gambler/bungholio
 License: http://creativecommons.org/licenses/by/3.0/
 Get music free for a link from https://starfrosch.com
 https://starfrosch.com/hot-111/royalty-free-music/cornholio
+
+-------------------------------------
+## UPDATER
+-------------------------------------
+See license folder
+
+https://www.codeproject.com/Tips/5246721/Update-Checker
+
+

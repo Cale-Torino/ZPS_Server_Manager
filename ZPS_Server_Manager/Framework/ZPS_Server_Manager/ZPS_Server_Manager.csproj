@@ -111,6 +111,7 @@
     <Compile Include="Forms\ShowLogsForm.Designer.cs">
       <DependentUpon>ShowLogsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="UpdateChecker\UpdateCheckerClass.cs" />
     <EmbeddedResource Include="Forms\CheckForUpdatesForm.resx">
       <DependentUpon>CheckForUpdatesForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -187,6 +188,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="TextFile.txt" />
+    <Content Include="UpdateChecker\CurrentVersion.xml" />
     <Content Include="zps_101.ico" />
   </ItemGroup>
   <ItemGroup>
@@ -200,5 +202,6 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -248,3 +248,13 @@ Now it should run fine, any problems again, please contact me or a member of the
 Please be aware that Steam will start automatically on system start. You should disable it from starting as there is absolutely no need for it to be running. Also do not uninstall Steam, yes it's over 600MB but our ZPS server requires Steam to be installed on the server.
 ------------------------------------------------------------------
 When updating your ZPS server you may have to reconfigure your server.cfg. I have just updated mine and it completely wiped my server.cfg. So, that is why we make a server backup before updating.
+
+
+
+
+--------------
+
+https://stackoverflow.com/questions/12787761/how-to-automatically-update-an-application-without-clickonce
+https://www.codeproject.com/Tips/5246721/Update-Checker
+https://github.com/wyday/wyupdate
+
