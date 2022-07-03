@@ -9,7 +9,7 @@ namespace ZPS_Server_Manager
 {
     internal class ProcessClass
     {
-        public static void RunProcess(string path)
+        internal static void RunProcess(string path)
         {
             using (Process p = new Process())
             {

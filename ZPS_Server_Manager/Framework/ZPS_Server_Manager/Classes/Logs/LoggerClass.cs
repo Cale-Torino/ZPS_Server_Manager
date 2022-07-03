@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 namespace ZPS_Server_Manager
 {
-    public class LoggerClass
+    internal class LoggerClass
     {
         //Create logfile log. file
         internal static string LogFile { get; set; } = $@"{AppDomain.CurrentDomain.BaseDirectory}Logs\{AppDomain.CurrentDomain.FriendlyName}_{DateTime.Now:yyyy-dd-M--HH-mm-ss}.log";
