@@ -37,7 +37,7 @@
             this.showLogFilesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewCurrentLogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.checkToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.GetSteamCMDbutton = new System.Windows.Forms.Button();
             this.SteamDirbutton = new System.Windows.Forms.Button();
@@ -47,12 +47,12 @@
             this.Groupsbutton = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.menuStrip1.SuspendLayout();
+            this.groupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(7)))), ((int)(((byte)(7)))));
-            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aboutToolStripMenuItem,
@@ -60,7 +60,7 @@
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 33);
+            this.menuStrip1.Size = new System.Drawing.Size(827, 33);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -98,7 +98,7 @@
             this.viewCurrentLogToolStripMenuItem});
             this.logFilesToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.logFilesToolStripMenuItem.Name = "logFilesToolStripMenuItem";
-            this.logFilesToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.logFilesToolStripMenuItem.Size = new System.Drawing.Size(263, 34);
             this.logFilesToolStripMenuItem.Text = "Log Files";
             // 
             // showLogFilesToolStripMenuItem
@@ -124,25 +124,32 @@
             this.checkToolStripMenuItem.BackColor = System.Drawing.Color.Black;
             this.checkToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.checkToolStripMenuItem.Name = "checkToolStripMenuItem";
-            this.checkToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.checkToolStripMenuItem.Size = new System.Drawing.Size(263, 34);
             this.checkToolStripMenuItem.Text = "Check For Updates";
             this.checkToolStripMenuItem.Click += new System.EventHandler(this.checkToolStripMenuItem_Click);
             // 
-            // groupBox1
+            // groupBox
             // 
-            this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(12, 36);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(200, 100);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
+            this.groupBox.Controls.Add(this.Groupsbutton);
+            this.groupBox.Controls.Add(this.SteamDirbutton);
+            this.groupBox.Controls.Add(this.Adminsbutton);
+            this.groupBox.Controls.Add(this.label1);
+            this.groupBox.Controls.Add(this.Servercfgbutton);
+            this.groupBox.Controls.Add(this.GetSteamCMDbutton);
+            this.groupBox.Controls.Add(this.OpenPortForwardbutton);
+            this.groupBox.ForeColor = System.Drawing.Color.White;
+            this.groupBox.Location = new System.Drawing.Point(12, 36);
+            this.groupBox.Name = "groupBox";
+            this.groupBox.Size = new System.Drawing.Size(804, 222);
+            this.groupBox.TabIndex = 1;
+            this.groupBox.TabStop = false;
+            this.groupBox.Text = "Controls";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(304, 169);
+            this.label1.Location = new System.Drawing.Point(2, 76);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(157, 20);
             this.label1.TabIndex = 3;
@@ -153,7 +160,7 @@
             this.GetSteamCMDbutton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(7)))), ((int)(((byte)(7)))));
             this.GetSteamCMDbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.GetSteamCMDbutton.ForeColor = System.Drawing.Color.White;
-            this.GetSteamCMDbutton.Location = new System.Drawing.Point(12, 209);
+            this.GetSteamCMDbutton.Location = new System.Drawing.Point(6, 25);
             this.GetSteamCMDbutton.Name = "GetSteamCMDbutton";
             this.GetSteamCMDbutton.Size = new System.Drawing.Size(153, 40);
             this.GetSteamCMDbutton.TabIndex = 4;
@@ -166,7 +173,7 @@
             this.SteamDirbutton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(7)))), ((int)(((byte)(7)))));
             this.SteamDirbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SteamDirbutton.ForeColor = System.Drawing.Color.White;
-            this.SteamDirbutton.Location = new System.Drawing.Point(309, 192);
+            this.SteamDirbutton.Location = new System.Drawing.Point(6, 99);
             this.SteamDirbutton.Name = "SteamDirbutton";
             this.SteamDirbutton.Size = new System.Drawing.Size(370, 40);
             this.SteamDirbutton.TabIndex = 5;
@@ -179,7 +186,7 @@
             this.OpenPortForwardbutton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(7)))), ((int)(((byte)(7)))));
             this.OpenPortForwardbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.OpenPortForwardbutton.ForeColor = System.Drawing.Color.White;
-            this.OpenPortForwardbutton.Location = new System.Drawing.Point(12, 255);
+            this.OpenPortForwardbutton.Location = new System.Drawing.Point(165, 25);
             this.OpenPortForwardbutton.Name = "OpenPortForwardbutton";
             this.OpenPortForwardbutton.Size = new System.Drawing.Size(153, 40);
             this.OpenPortForwardbutton.TabIndex = 6;
@@ -192,7 +199,7 @@
             this.Servercfgbutton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(7)))), ((int)(((byte)(7)))));
             this.Servercfgbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Servercfgbutton.ForeColor = System.Drawing.Color.White;
-            this.Servercfgbutton.Location = new System.Drawing.Point(171, 255);
+            this.Servercfgbutton.Location = new System.Drawing.Point(324, 25);
             this.Servercfgbutton.Name = "Servercfgbutton";
             this.Servercfgbutton.Size = new System.Drawing.Size(153, 40);
             this.Servercfgbutton.TabIndex = 7;
@@ -205,7 +212,7 @@
             this.Adminsbutton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(7)))), ((int)(((byte)(7)))));
             this.Adminsbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Adminsbutton.ForeColor = System.Drawing.Color.White;
-            this.Adminsbutton.Location = new System.Drawing.Point(12, 302);
+            this.Adminsbutton.Location = new System.Drawing.Point(483, 25);
             this.Adminsbutton.Name = "Adminsbutton";
             this.Adminsbutton.Size = new System.Drawing.Size(153, 40);
             this.Adminsbutton.TabIndex = 8;
@@ -218,7 +225,7 @@
             this.Groupsbutton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(7)))), ((int)(((byte)(7)))));
             this.Groupsbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Groupsbutton.ForeColor = System.Drawing.Color.White;
-            this.Groupsbutton.Location = new System.Drawing.Point(171, 302);
+            this.Groupsbutton.Location = new System.Drawing.Point(642, 25);
             this.Groupsbutton.Name = "Groupsbutton";
             this.Groupsbutton.Size = new System.Drawing.Size(153, 40);
             this.Groupsbutton.TabIndex = 9;
@@ -231,15 +238,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
-            this.ClientSize = new System.Drawing.Size(800, 449);
-            this.Controls.Add(this.Groupsbutton);
-            this.Controls.Add(this.Adminsbutton);
-            this.Controls.Add(this.Servercfgbutton);
-            this.Controls.Add(this.OpenPortForwardbutton);
-            this.Controls.Add(this.SteamDirbutton);
-            this.Controls.Add(this.GetSteamCMDbutton);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.groupBox1);
+            this.ClientSize = new System.Drawing.Size(827, 274);
+            this.Controls.Add(this.groupBox);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -252,6 +252,8 @@
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.groupBox.ResumeLayout(false);
+            this.groupBox.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -261,7 +263,7 @@
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button GetSteamCMDbutton;
         private System.Windows.Forms.Button SteamDirbutton;
