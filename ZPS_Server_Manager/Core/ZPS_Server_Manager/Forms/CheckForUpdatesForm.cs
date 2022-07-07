@@ -21,5 +21,10 @@ namespace ZPS_Server_Manager
         {
 
         }
+
+        private void Closebutton_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
