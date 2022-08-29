@@ -1,11 +1,16 @@
 # ZPS_Server_Manager
 
+Description
+...
+
 1. Splash screen logo
 2. Splah screen Re-theme music
 3. About form zps theme
 4. Main Form Controls
 5. DPI fixes
 6. DotNet5.0 version
+7. Add sound
+
 
 ### Cursors
 
@@ -27,6 +32,10 @@ If you want to download the maps in bulk use the chrome extension TabSave then p
 https://chrome.google.com/webstore/detail/tab-save/lkngoeaeclaebmpkgapchgjdbaekacki
 
 https://github.com/lmmx/tabsave
+
+### Tools
+
+[VTFLib](https://nemstools.github.io/pages/VTFLib-Download.html)
 
 TODO
 
